@@ -12,7 +12,8 @@ const state = {
   evidenceRecords: [],
   activeEvidenceType: "all",
   activeEvidenceRecord: null,
-  reductionGuide: null
+  reductionGuide: null,
+  researchLibrary: null
 };
 
 const els = {
@@ -129,7 +130,14 @@ const els = {
   reductionCategoryPicker: document.querySelector("#reductionCategoryPicker"),
   reductionCategoryName: document.querySelector("#reductionCategoryName"),
   reductionCategorySummary: document.querySelector("#reductionCategorySummary"),
-  reductionActionList: document.querySelector("#reductionActionList")
+  reductionActionList: document.querySelector("#reductionActionList"),
+  libraryPrinciple: document.querySelector("#libraryPrinciple"),
+  librarySearch: document.querySelector("#librarySearch"),
+  libraryTypeFilter: document.querySelector("#libraryTypeFilter"),
+  libraryOrgFilter: document.querySelector("#libraryOrgFilter"),
+  libraryCount: document.querySelector("#libraryCount"),
+  libraryClearFilters: document.querySelector("#libraryClearFilters"),
+  researchLibraryGrid: document.querySelector("#researchLibraryGrid")
 };
 
 async function loadJson(path) {
@@ -140,6 +148,92 @@ async function loadJson(path) {
 
 
 
+
+
+function renderResearchLibrary() {
+  const library = state.researchLibrary;
+  if (!library) return;
+
+  els.libraryPrinciple.textContent = library.principle;
+
+  const types = [...new Set(library.resources.map(item => item.type))].sort();
+  const orgs = [...new Set(library.resources.map(item => item.organization))].sort();
+
+  els.libraryTypeFilter.innerHTML = '<option value="all">All source types</option>' +
+    types.map(value => `<option value="${value}">${value}</option>`).join("");
+
+  els.libraryOrgFilter.innerHTML = '<option value="all">All organizations</option>' +
+    orgs.map(value => `<option value="${value}">${value}</option>`).join("");
+
+  const rerender = () => renderResearchLibraryResults();
+  els.librarySearch.addEventListener("input", rerender);
+  els.libraryTypeFilter.addEventListener("change", rerender);
+  els.libraryOrgFilter.addEventListener("change", rerender);
+  els.libraryClearFilters.addEventListener("click", () => {
+    els.librarySearch.value = "";
+    els.libraryTypeFilter.value = "all";
+    els.libraryOrgFilter.value = "all";
+    renderResearchLibraryResults();
+  });
+
+  renderResearchLibraryResults();
+}
+
+function researchRecordHaystack(item) {
+  return [
+    item.title,
+    item.organization,
+    item.type,
+    item.year,
+    item.summary,
+    ...(item.topics || []),
+    ...(item.chemicals || []),
+    item.citation_id
+  ].join(" ").toLowerCase();
+}
+
+function renderResearchLibraryResults() {
+  const library = state.researchLibrary;
+  if (!library) return;
+
+  const query = els.librarySearch.value.trim().toLowerCase();
+  const type = els.libraryTypeFilter.value;
+  const org = els.libraryOrgFilter.value;
+
+  const resources = library.resources.filter(item => {
+    const queryMatch = !query || researchRecordHaystack(item).includes(query);
+    const typeMatch = type === "all" || item.type === type;
+    const orgMatch = org === "all" || item.organization === org;
+    return queryMatch && typeMatch && orgMatch;
+  });
+
+  els.libraryCount.textContent = `${resources.length} source${resources.length === 1 ? "" : "s"}`;
+
+  if (!resources.length) {
+    els.researchLibraryGrid.innerHTML = '<p class="error-message">No research sources match these filters.</p>';
+    return;
+  }
+
+  els.researchLibraryGrid.innerHTML = resources.map(item => `
+    <article class="research-card">
+      <div class="research-card-top">
+        <span class="research-type">${item.type}</span>
+        <span class="research-year">${item.year}</span>
+      </div>
+      <h3>${item.title}</h3>
+      <p class="research-org">${item.organization}</p>
+      <p class="research-summary">${item.summary}</p>
+      <div class="chip-list research-topics">
+        ${(item.topics || []).map(topic => `<span>${topic}</span>`).join("")}
+      </div>
+      <dl class="research-meta">
+        <div><dt>Chemicals</dt><dd>${(item.chemicals || []).join(", ")}</dd></div>
+        <div><dt>Citation ID</dt><dd>${item.citation_id}</dd></div>
+      </dl>
+      <a class="source-inline" href="${item.url}" target="_blank" rel="noopener noreferrer">Open source ↗</a>
+    </article>
+  `).join("");
+}
 
 function reductionTierMeta(tierId) {
   return state.reductionGuide?.tiers?.find(item => item.id === tierId);
@@ -636,7 +730,7 @@ function renderFeedback(item) {
 
 async function init() {
   try {
-    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways, evidenceMeta, evidenceRecords, reductionGuide] = await Promise.all([
+    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways, evidenceMeta, evidenceRecords, reductionGuide, researchLibrary] = await Promise.all([
       loadJson("data/exposures.json"),
       loadJson("data/chemicals.json"),
       loadJson("data/endocrine-systems.json"),
@@ -647,7 +741,8 @@ async function init() {
       loadJson("data/pathways.json"),
       loadJson("data/evidence.json"),
       loadJson("data/evidence-records.json"),
-      loadJson("data/reduction-guide.json")
+      loadJson("data/reduction-guide.json"),
+      loadJson("data/research-library.json")
     ]);
 
     state.exposures = exposures;
@@ -661,10 +756,12 @@ async function init() {
     state.evidenceMeta = evidenceMeta;
     state.evidenceRecords = evidenceRecords;
     state.reductionGuide = reductionGuide;
+    state.researchLibrary = researchLibrary;
 
     renderPathwayScenarios();
     renderEvidenceEngine();
     renderReductionGuide();
+    renderResearchLibrary();
     setupPathwayDeepLinks();
     renderExposureButtons();
     renderExposureAtlas();
