@@ -247,13 +247,75 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">CHEMICAL ATLAS</p>
-            <h2>Structured knowledge objects, not scare labels.</h2>
+            <h2>Structured profiles for major endocrine-active chemical classes.</h2>
           </div>
-          <p>Each class will expand into compounds, uses, exposure routes, molecular targets, endocrine systems, study types, and citations.</p>
+          <p>Each profile separates class identity, representative compounds, exposure contexts, endocrine systems, mechanistic domains, evidence summaries, and uncertainty.</p>
         </div>
 
-        <div class="chemical-grid" id="chemicalGrid" aria-live="polite">
-          <p class="loading">Loading Atlas data…</p>
+        <div class="chemical-atlas">
+          <div class="chemical-picker" id="chemicalGrid" aria-label="Chemical classes"></div>
+
+          <article class="chemical-profile" aria-live="polite">
+            <div class="chemical-profile-head">
+              <div>
+                <p class="mini-label">SELECTED CHEMICAL CLASS</p>
+                <h3 id="chemicalName">Loading chemical data…</h3>
+                <p id="chemicalFullName" class="chemical-subtitle"></p>
+              </div>
+              <span class="evidence-badge" id="chemicalStatus">—</span>
+            </div>
+
+            <p id="chemicalSummary" class="chemical-summary"></p>
+
+            <div class="chemical-profile-grid">
+              <section>
+                <h4>Representative compounds</h4>
+                <div class="chip-list" id="chemicalCompounds"></div>
+              </section>
+              <section>
+                <h4>Common exposure contexts</h4>
+                <div class="chip-list" id="chemicalContexts"></div>
+              </section>
+              <section>
+                <h4>Exposure routes</h4>
+                <div class="chip-list" id="chemicalRoutes"></div>
+              </section>
+              <section>
+                <h4>Endocrine systems studied</h4>
+                <div class="chip-list" id="chemicalSystems"></div>
+              </section>
+              <section class="chemical-wide">
+                <h4>Mechanistic domains</h4>
+                <div class="chip-list" id="chemicalMechanisms"></div>
+              </section>
+            </div>
+
+            <div class="chemical-evidence-grid">
+              <div>
+                <h4>Evidence summary</h4>
+                <p id="chemicalEvidence"></p>
+              </div>
+              <div>
+                <h4>Critical uncertainty</h4>
+                <p id="chemicalUncertainty"></p>
+              </div>
+            </div>
+
+            <div class="compound-browser">
+              <div class="compound-browser-head">
+                <div>
+                  <p class="mini-label">REPRESENTATIVE COMPOUND</p>
+                  <h4 id="compoundName">—</h4>
+                </div>
+                <select id="compoundSelect" aria-label="Choose a representative compound"></select>
+              </div>
+              <p id="compoundFullName" class="compound-full-name"></p>
+              <p id="compoundNote"></p>
+              <div class="chip-list" id="compoundSystems"></div>
+            </div>
+
+            <a id="chemicalSource" class="source-inline" href="#" target="_blank" rel="noopener noreferrer">Source ↗</a>
+          </article>
         </div>
       </div>
     </section>
@@ -327,7 +389,7 @@
         <strong>Endocrine Exposure Atlas</strong>
         <p>Evidence-led environmental health education.</p>
       </div>
-      <p>Version 0.2 · Endocrine System Atlas</p>
+      <p>Version 0.3 · Chemical Atlas</p>
     </div>
   </footer>
 
