@@ -1,0 +1,20 @@
+[
+  {
+    "id": "thyroid",
+    "name": "Thyroid axis",
+    "core_components": ["hypothalamus", "pituitary", "thyroid", "thyroid hormones"],
+    "atlas_status": "foundation"
+  },
+  {
+    "id": "reproductive",
+    "name": "Hypothalamic-pituitary-gonadal axis",
+    "core_components": ["hypothalamus", "pituitary", "gonads", "sex steroids"],
+    "atlas_status": "foundation"
+  },
+  {
+    "id": "metabolic",
+    "name": "Metabolic endocrine signaling",
+    "core_components": ["pancreas", "adipose tissue", "liver", "muscle"],
+    "atlas_status": "foundation"
+  }
+]
