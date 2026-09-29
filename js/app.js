@@ -10,6 +10,23 @@ const state = {
 
 const els = {
   sourcePicker: document.querySelector("#sourcePicker"),
+  exposureAtlasGrid: document.querySelector("#exposureAtlasGrid"),
+  exposureName: document.querySelector("#exposureName"),
+  exposureSubtitle: document.querySelector("#exposureSubtitle"),
+  exposureEvidence: document.querySelector("#exposureEvidence"),
+  exposureSummary: document.querySelector("#exposureSummary"),
+  exposureSource: document.querySelector("#exposureSource"),
+  exposureChemical: document.querySelector("#exposureChemical"),
+  exposureRoute: document.querySelector("#exposureRoute"),
+  exposureSystem: document.querySelector("#exposureSystem"),
+  exposureClasses: document.querySelector("#exposureClasses"),
+  exposureExamples: document.querySelector("#exposureExamples"),
+  exposureRoutes: document.querySelector("#exposureRoutes"),
+  exposureDrivers: document.querySelector("#exposureDrivers"),
+  exposureQuestions: document.querySelector("#exposureQuestions"),
+  exposureInterpretation: document.querySelector("#exposureInterpretation"),
+  exposureLimitation: document.querySelector("#exposureLimitation"),
+  exposureSourceLink: document.querySelector("#exposureSourceLink"),
   chemicalGrid: document.querySelector("#chemicalGrid"),
   chemicalName: document.querySelector("#chemicalName"),
   chemicalFullName: document.querySelector("#chemicalFullName"),
@@ -105,6 +122,45 @@ function renderPathway(item) {
   els.pathSystem.textContent = item.system;
   els.pathSummary.textContent = item.summary;
   els.pathLimitation.textContent = item.limitation;
+}
+
+
+function renderExposureAtlas() {
+  els.exposureAtlasGrid.innerHTML = "";
+  state.exposures.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "exposure-atlas-button";
+    button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+    button.innerHTML = `<span class="exposure-icon">${item.icon || "EXP"}</span><strong>${item.title}</strong><small>${item.subtitle}</small>`;
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".exposure-atlas-button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      renderExposureProfile(item);
+    });
+    els.exposureAtlasGrid.appendChild(button);
+  });
+  if (state.exposures[0]) renderExposureProfile(state.exposures[0]);
+}
+
+function renderExposureProfile(item) {
+  els.exposureName.textContent = item.title;
+  els.exposureSubtitle.textContent = item.subtitle;
+  els.exposureEvidence.textContent = item.evidenceLabel;
+  els.exposureSummary.textContent = item.summary;
+  els.exposureSource.textContent = item.source;
+  els.exposureChemical.textContent = item.chemical;
+  els.exposureRoute.textContent = item.route;
+  els.exposureSystem.textContent = item.system;
+  els.exposureClasses.innerHTML = chips(item.chemical_classes || []);
+  els.exposureExamples.innerHTML = chips(item.example_contexts || []);
+  els.exposureRoutes.innerHTML = chips(item.exposure_routes || []);
+  els.exposureDrivers.innerHTML = chips(item.exposure_drivers || []);
+  els.exposureQuestions.innerHTML = (item.practical_questions || []).map(q => `<li>${q}</li>`).join("");
+  els.exposureInterpretation.textContent = item.summary;
+  els.exposureLimitation.textContent = item.limitation;
+  els.exposureSourceLink.textContent = `${item.source_label || "Source"} ↗`;
+  els.exposureSourceLink.href = item.source_url || "#";
 }
 
 function renderChemicals() {
@@ -267,6 +323,7 @@ async function init() {
     state.compounds = compounds;
 
     renderExposureButtons();
+    renderExposureAtlas();
     renderChemicals();
     renderAxisPicker();
     setupSelect(els.hormoneSelect, state.hormones, item => item.name, renderHormone);
