@@ -725,3 +725,167 @@ h3 { margin-bottom: 8px; font-size: 1rem; }
   .subatlas-head { align-items: flex-start; flex-direction: column; }
   .subatlas-card select { width: 100%; max-width: none; }
 }
+
+
+/* Chemical Atlas */
+.chemical-atlas {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.chemical-picker {
+  display: grid;
+  gap: 10px;
+}
+
+.chemical-class-button {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--panel);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.chemical-class-button strong,
+.chemical-class-button small { display: block; }
+
+.chemical-class-button small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: .73rem;
+  line-height: 1.35;
+}
+
+.chemical-class-button[aria-pressed="true"],
+.chemical-class-button:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  outline: none;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.chemical-profile {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.chemical-profile-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chemical-profile-head h3 {
+  margin-bottom: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  font-weight: 500;
+}
+
+.chemical-subtitle,
+.compound-full-name {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.chemical-summary {
+  margin: 20px 0;
+  color: var(--muted);
+}
+
+.chemical-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.chemical-profile-grid section {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fcfdfb;
+}
+
+.chemical-profile-grid h4,
+.chemical-evidence-grid h4,
+.compound-browser h4 {
+  margin: 0 0 10px;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.chemical-wide { grid-column: 1 / -1; }
+
+.chemical-evidence-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.chemical-evidence-grid > div {
+  padding: 16px;
+  border-radius: 15px;
+  background: var(--warm);
+}
+
+.chemical-evidence-grid p,
+.compound-browser p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .87rem;
+}
+
+.compound-browser {
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fafbf9;
+}
+
+.compound-browser-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.compound-browser select {
+  min-height: 38px;
+  padding: 7px 30px 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+}
+
+.compound-browser .chip-list { margin-top: 12px; }
+
+@media (max-width: 900px) {
+  .chemical-atlas { grid-template-columns: 1fr; }
+  .chemical-picker { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .chemical-picker,
+  .chemical-profile-grid,
+  .chemical-evidence-grid { grid-template-columns: 1fr; }
+  .chemical-wide { grid-column: auto; }
+  .chemical-profile { padding: 18px; }
+  .chemical-profile-head,
+  .compound-browser-head { flex-direction: column; }
+  .compound-browser select { width: 100%; }
+}
