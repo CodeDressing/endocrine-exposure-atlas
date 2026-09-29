@@ -21,6 +21,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#explorer">Explorer</a>
+        <a href="#endocrine">Endocrine Atlas</a>
         <a href="#chemicals">Chemical Atlas</a>
         <a href="#evidence">Evidence</a>
         <a href="#about">Mission</a>
@@ -136,6 +137,111 @@
       </div>
     </section>
 
+
+    <section class="section endocrine-section" id="endocrine">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ENDOCRINE SYSTEM ATLAS</p>
+            <h2>Hormones, glands, receptors, feedback and signaling.</h2>
+          </div>
+          <p>Explore endocrine systems as regulatory networks rather than isolated organs. Select an axis to see its control hierarchy, receptors, feedback logic and endocrine-disruption relevance.</p>
+        </div>
+
+        <div class="endocrine-atlas">
+          <div class="axis-picker" id="axisPicker" role="list" aria-label="Endocrine systems"></div>
+
+          <article class="axis-panel" aria-live="polite">
+            <div class="axis-panel-head">
+              <div>
+                <p class="mini-label">SELECTED SYSTEM</p>
+                <h3 id="axisName">Loading endocrine systems…</h3>
+                <p id="axisPurpose" class="axis-purpose"></p>
+              </div>
+              <span class="evidence-badge" id="axisFeedback">—</span>
+            </div>
+
+            <div class="axis-chain" id="axisChain"></div>
+
+            <div class="axis-detail-grid">
+              <section>
+                <h4>Hormones</h4>
+                <div class="chip-list" id="axisHormones"></div>
+              </section>
+              <section>
+                <h4>Receptors</h4>
+                <div class="chip-list" id="axisReceptors"></div>
+              </section>
+              <section>
+                <h4>Target tissues</h4>
+                <div class="chip-list" id="axisTargets"></div>
+              </section>
+              <section>
+                <h4>Potential disruption nodes</h4>
+                <div class="chip-list" id="axisEDC"></div>
+              </section>
+            </div>
+
+            <div class="axis-explanation">
+              <div>
+                <h4>Signal logic</h4>
+                <p id="axisSignal"></p>
+              </div>
+              <div>
+                <h4>Feedback control</h4>
+                <p id="axisFeedbackDetail"></p>
+              </div>
+              <div>
+                <h4>Evidence note</h4>
+                <p id="axisEvidenceNote"></p>
+              </div>
+            </div>
+            <a id="axisSource" class="source-inline" href="#" target="_blank" rel="noopener noreferrer">Source ↗</a>
+          </article>
+        </div>
+
+        <div class="subatlas-grid">
+          <article class="subatlas-card">
+            <div class="subatlas-head">
+              <p class="mini-label">HORMONE ATLAS</p>
+              <select id="hormoneSelect" aria-label="Choose a hormone"></select>
+            </div>
+            <h3 id="hormoneName">—</h3>
+            <dl class="fact-list">
+              <div><dt>Source</dt><dd id="hormoneSource">—</dd></div>
+              <div><dt>Class</dt><dd id="hormoneClass">—</dd></div>
+              <div><dt>Primary receptor</dt><dd id="hormoneReceptor">—</dd></div>
+              <div><dt>Role</dt><dd id="hormoneRole">—</dd></div>
+            </dl>
+          </article>
+
+          <article class="subatlas-card">
+            <div class="subatlas-head">
+              <p class="mini-label">RECEPTOR ATLAS</p>
+              <select id="receptorSelect" aria-label="Choose a receptor"></select>
+            </div>
+            <h3 id="receptorName">—</h3>
+            <dl class="fact-list">
+              <div><dt>Type</dt><dd id="receptorType">—</dd></div>
+              <div><dt>Ligand(s)</dt><dd id="receptorLigands">—</dd></div>
+              <div><dt>Signaling</dt><dd id="receptorSignaling">—</dd></div>
+              <div><dt>Why it matters</dt><dd id="receptorImportance">—</dd></div>
+            </dl>
+          </article>
+
+          <article class="subatlas-card">
+            <div class="subatlas-head">
+              <p class="mini-label">FEEDBACK SYSTEMS</p>
+              <select id="feedbackSelect" aria-label="Choose a feedback system"></select>
+            </div>
+            <h3 id="feedbackName">—</h3>
+            <p id="feedbackDescription"></p>
+            <ol class="feedback-sequence" id="feedbackSequence"></ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="chemicals">
       <div class="shell">
         <div class="section-heading">
@@ -221,7 +327,7 @@
         <strong>Endocrine Exposure Atlas</strong>
         <p>Evidence-led environmental health education.</p>
       </div>
-      <p>Version 0.1 · Architecture foundation</p>
+      <p>Version 0.2 · Endocrine System Atlas</p>
     </div>
   </footer>
 
