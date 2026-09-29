@@ -1,0 +1,18 @@
+[
+  {"name":"TRH","full_name":"Thyrotropin-releasing hormone","source":"Hypothalamus","class":"Peptide","primary_receptor":"TRHR","role":"Stimulates pituitary TSH release","axis":"hpt"},
+  {"name":"TSH","full_name":"Thyroid-stimulating hormone","source":"Anterior pituitary","class":"Glycoprotein","primary_receptor":"TSHR","role":"Stimulates thyroid hormone synthesis and secretion","axis":"hpt"},
+  {"name":"T4 / T3","full_name":"Thyroxine / triiodothyronine","source":"Thyroid gland","class":"Iodothyronines","primary_receptor":"THRA / THRB","role":"Regulate gene expression, metabolism, growth and development","axis":"hpt"},
+  {"name":"GnRH","full_name":"Gonadotropin-releasing hormone","source":"Hypothalamus","class":"Peptide","primary_receptor":"GnRHR","role":"Drives pituitary LH and FSH secretion","axis":"hpg"},
+  {"name":"LH / FSH","full_name":"Luteinizing hormone / follicle-stimulating hormone","source":"Anterior pituitary","class":"Glycoproteins","primary_receptor":"LHCGR / FSHR","role":"Control gonadal steroidogenesis and gametogenesis","axis":"hpg"},
+  {"name":"Estradiol","full_name":"17β-estradiol","source":"Primarily ovaries; also peripheral synthesis","class":"Steroid","primary_receptor":"ERα / ERβ","role":"Reproductive, skeletal, neural and metabolic signaling","axis":"hpg"},
+  {"name":"Testosterone","full_name":"Testosterone","source":"Primarily testes; also adrenal/peripheral contribution","class":"Steroid","primary_receptor":"Androgen receptor","role":"Reproductive development and systemic androgen signaling","axis":"hpg"},
+  {"name":"CRH","full_name":"Corticotropin-releasing hormone","source":"Hypothalamus","class":"Peptide","primary_receptor":"CRHR1","role":"Stimulates ACTH secretion","axis":"hpa"},
+  {"name":"ACTH","full_name":"Adrenocorticotropic hormone","source":"Anterior pituitary","class":"Peptide","primary_receptor":"MC2R","role":"Stimulates adrenal glucocorticoid production","axis":"hpa"},
+  {"name":"Cortisol","full_name":"Cortisol","source":"Adrenal cortex","class":"Steroid","primary_receptor":"GR / MR","role":"Coordinates stress, metabolic and immune responses","axis":"hpa"},
+  {"name":"GH","full_name":"Growth hormone","source":"Anterior pituitary","class":"Protein","primary_receptor":"GHR","role":"Direct metabolic actions and stimulation of IGF-1","axis":"gh-igf"},
+  {"name":"IGF-1","full_name":"Insulin-like growth factor 1","source":"Liver and local tissues","class":"Peptide","primary_receptor":"IGF1R","role":"Growth and anabolic signaling","axis":"gh-igf"},
+  {"name":"Insulin","full_name":"Insulin","source":"Pancreatic beta cells","class":"Peptide","primary_receptor":"INSR","role":"Promotes glucose uptake and anabolic storage","axis":"metabolic"},
+  {"name":"Glucagon","full_name":"Glucagon","source":"Pancreatic alpha cells","class":"Peptide","primary_receptor":"GCGR","role":"Supports hepatic glucose output during fasting","axis":"metabolic"},
+  {"name":"Vasopressin","full_name":"Arginine vasopressin / ADH","source":"Hypothalamus; released from posterior pituitary","class":"Peptide","primary_receptor":"AVPR2 / AVPR1A","role":"Water conservation and vascular signaling","axis":"posterior-pituitary"},
+  {"name":"Oxytocin","full_name":"Oxytocin","source":"Hypothalamus; released from posterior pituitary","class":"Peptide","primary_receptor":"OXTR","role":"Parturition and milk-ejection signaling","axis":"posterior-pituitary"}
+]
