@@ -1,0 +1,301 @@
+{
+  "version": "0.1",
+  "principle": "The Research Library separates authoritative guidance, evidence syntheses, and peer-reviewed literature. Inclusion does not mean every conclusion in a source is adopted by the Atlas.",
+  "resources": [
+    {
+      "id": "niehs-edc-overview",
+      "title": "Endocrine Disruptors",
+      "organization": "National Institute of Environmental Health Sciences (NIEHS)",
+      "type": "Authoritative overview",
+      "year": "Current",
+      "topics": [
+        "Endocrine disruption",
+        "Mechanisms",
+        "Human health",
+        "Development"
+      ],
+      "chemicals": [
+        "Multiple classes"
+      ],
+      "summary": "Foundational NIEHS overview of endocrine-disrupting chemicals, hormone interference, sensitive life stages, and ongoing research.",
+      "atlas_links": [
+        "endocrine",
+        "evidence",
+        "reduction-guide"
+      ],
+      "url": "https://www.niehs.nih.gov/health/topics/agents/endocrine",
+      "citation_id": "NIEHS-EDC-OVERVIEW"
+    },
+    {
+      "id": "niehs-edc-research",
+      "title": "Endocrine Disruptors — Research Program",
+      "organization": "National Institute of Environmental Health Sciences (NIEHS)",
+      "type": "Research program",
+      "year": "Current",
+      "topics": [
+        "Research methods",
+        "Exposure",
+        "Mechanisms",
+        "Biomarkers"
+      ],
+      "chemicals": [
+        "Multiple classes"
+      ],
+      "summary": "NIEHS research program page covering exposure science, mechanistic work, animal and human research, biomarkers, and intervention research.",
+      "atlas_links": [
+        "evidence",
+        "chemicals"
+      ],
+      "url": "https://www.niehs.nih.gov/research/supported/exposure/endocrine",
+      "citation_id": "NIEHS-EDC-RESEARCH"
+    },
+    {
+      "id": "epa-pfas-risks",
+      "title": "Our Current Understanding of the Human Health and Environmental Risks of PFAS",
+      "organization": "U.S. Environmental Protection Agency",
+      "type": "Authoritative assessment",
+      "year": "Current",
+      "topics": [
+        "PFAS",
+        "Human health",
+        "Exposure",
+        "Uncertainty"
+      ],
+      "chemicals": [
+        "PFAS",
+        "PFOA",
+        "PFOS"
+      ],
+      "summary": "EPA overview distinguishing better-studied PFAS from the much larger class and summarizing exposure pathways, health-effect domains, and major uncertainties.",
+      "atlas_links": [
+        "chemicals",
+        "explorer",
+        "evidence",
+        "reduction-guide"
+      ],
+      "url": "https://www.epa.gov/pfas/our-current-understanding-human-health-and-environmental-risks-pfas",
+      "citation_id": "EPA-PFAS-RISKS"
+    },
+    {
+      "id": "epa-pfas-explained",
+      "title": "PFAS Explained",
+      "organization": "U.S. Environmental Protection Agency",
+      "type": "Authoritative overview",
+      "year": "Current",
+      "topics": [
+        "PFAS",
+        "Exposure",
+        "Environment",
+        "Risk communication"
+      ],
+      "chemicals": [
+        "PFAS"
+      ],
+      "summary": "Public-facing EPA background on PFAS persistence, uses, exposure, research gaps, and risk-reduction context.",
+      "atlas_links": [
+        "exposure-atlas",
+        "chemicals",
+        "reduction-guide"
+      ],
+      "url": "https://www.epa.gov/pfas/pfas-explained",
+      "citation_id": "EPA-PFAS-EXPLAINED"
+    },
+    {
+      "id": "fda-bpa",
+      "title": "Bisphenol A (BPA)",
+      "organization": "U.S. Food and Drug Administration",
+      "type": "Regulatory assessment",
+      "year": "Current",
+      "topics": [
+        "BPA",
+        "Food contact",
+        "Regulation",
+        "Risk assessment"
+      ],
+      "chemicals": [
+        "BPA",
+        "Bisphenols"
+      ],
+      "summary": "FDA regulatory and scientific assessment page for BPA in food-contact applications, useful for comparing hazard literature with regulatory risk conclusions.",
+      "atlas_links": [
+        "chemicals",
+        "exposure-atlas",
+        "evidence"
+      ],
+      "url": "https://www.fda.gov/food/food-packaging-other-substances-come-contact-food-information-consumers/bisphenol-bpa",
+      "citation_id": "FDA-BPA"
+    },
+    {
+      "id": "fda-food-contact",
+      "title": "Food Contact Substances",
+      "organization": "U.S. Food and Drug Administration",
+      "type": "Regulatory guidance",
+      "year": "Current",
+      "topics": [
+        "Food contact",
+        "Packaging",
+        "Migration",
+        "Regulation"
+      ],
+      "chemicals": [
+        "Multiple classes"
+      ],
+      "summary": "FDA framework for substances that contact food, useful for cookware, packaging, migration, and material-specific exposure questions.",
+      "atlas_links": [
+        "exposure-atlas",
+        "reduction-guide"
+      ],
+      "url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances",
+      "citation_id": "FDA-FOOD-CONTACT"
+    },
+    {
+      "id": "epa-pcbs-health",
+      "title": "Health Effects of PCBs",
+      "organization": "U.S. Environmental Protection Agency",
+      "type": "Authoritative assessment",
+      "year": "Current",
+      "topics": [
+        "PCBs",
+        "Thyroid",
+        "Animal evidence",
+        "Human evidence"
+      ],
+      "chemicals": [
+        "PCBs"
+      ],
+      "summary": "EPA summary of PCB health evidence, including endocrine findings in animal studies and human thyroid-related evidence.",
+      "atlas_links": [
+        "chemicals",
+        "explorer",
+        "evidence"
+      ],
+      "url": "https://www.epa.gov/pcbs/health-effects-pcbs",
+      "citation_id": "EPA-PCB-HEALTH"
+    },
+    {
+      "id": "niehs-flame-retardants",
+      "title": "Flame Retardants",
+      "organization": "National Institute of Environmental Health Sciences (NIEHS)",
+      "type": "Authoritative overview",
+      "year": "Current",
+      "topics": [
+        "Flame retardants",
+        "PBDEs",
+        "Thyroid",
+        "Indoor exposure"
+      ],
+      "chemicals": [
+        "PBDEs",
+        "Flame retardants"
+      ],
+      "summary": "NIEHS overview of flame-retardant chemical families, exposure pathways, research findings, and endocrine-related concerns.",
+      "atlas_links": [
+        "chemicals",
+        "exposure-atlas",
+        "evidence"
+      ],
+      "url": "https://www.niehs.nih.gov/health/topics/agents/flame_retardants",
+      "citation_id": "NIEHS-FLAME-RETARDANTS"
+    },
+    {
+      "id": "who-edc-child-health",
+      "title": "Endocrine Disrupting Chemicals and Child Health",
+      "organization": "World Health Organization",
+      "type": "International overview",
+      "year": "Current",
+      "topics": [
+        "Children",
+        "Development",
+        "Endocrine disruption",
+        "Public health"
+      ],
+      "chemicals": [
+        "Multiple classes"
+      ],
+      "summary": "WHO program overview on endocrine-disrupting chemicals, child health, research needs, and exposure prevention.",
+      "atlas_links": [
+        "endocrine",
+        "evidence",
+        "reduction-guide"
+      ],
+      "url": "https://www.who.int/activities/providing-information-on-endocrine-disrupting-chemicals-and-child-health",
+      "citation_id": "WHO-EDC-CHILD"
+    },
+    {
+      "id": "pubmed-phthalate-overview-reviews",
+      "title": "Human health impacts of exposure to phthalate plasticizers: An overview of reviews",
+      "organization": "Peer-reviewed literature / PubMed",
+      "type": "Review of reviews",
+      "year": "2021",
+      "topics": [
+        "Phthalates",
+        "Human evidence",
+        "Systematic reviews",
+        "Health outcomes"
+      ],
+      "chemicals": [
+        "Phthalates"
+      ],
+      "summary": "Overview of structured reviews examining human health outcomes associated with phthalate exposure.",
+      "atlas_links": [
+        "chemicals",
+        "evidence"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34601394/",
+      "citation_id": "PMID-34601394"
+    },
+    {
+      "id": "pubmed-phthalate-metabolic",
+      "title": "Phthalate exposure and metabolic effects: a systematic review of the human epidemiological evidence",
+      "organization": "Peer-reviewed literature / PubMed",
+      "type": "Systematic review",
+      "year": "2019",
+      "topics": [
+        "Phthalates",
+        "Metabolism",
+        "Insulin resistance",
+        "Human evidence"
+      ],
+      "chemicals": [
+        "DEHP",
+        "DINP",
+        "DBP",
+        "DIBP",
+        "BBP",
+        "DEP"
+      ],
+      "summary": "Systematic review using structured risk-of-bias criteria to assess human metabolic outcomes across several phthalates.",
+      "atlas_links": [
+        "chemicals",
+        "evidence",
+        "endocrine"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31196577/",
+      "citation_id": "PMID-31196577"
+    },
+    {
+      "id": "pubmed-dehp-hormones",
+      "title": "Association of Di(2-ethylhexyl) Phthalate Exposure with Reproductive Hormones: A Systematic Review and Meta-Analysis",
+      "organization": "Peer-reviewed literature / PubMed",
+      "type": "Systematic review & meta-analysis",
+      "year": "2024",
+      "topics": [
+        "DEHP",
+        "Reproductive hormones",
+        "Human evidence",
+        "Meta-analysis"
+      ],
+      "chemicals": [
+        "DEHP"
+      ],
+      "summary": "Meta-analysis of epidemiological studies examining DEHP exposure biomarkers and reproductive hormone measures across multiple populations.",
+      "atlas_links": [
+        "chemicals",
+        "evidence",
+        "endocrine"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39568700/",
+      "citation_id": "PMID-39568700"
+    }
+  ]
+}
