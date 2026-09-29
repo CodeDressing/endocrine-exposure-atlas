@@ -1,0 +1,102 @@
+[
+  {
+    "id": "pfoa",
+    "class_id": "pfas",
+    "name": "PFOA",
+    "full_name": "Perfluorooctanoic acid",
+    "note": "Legacy long-chain PFAS; extensively studied relative to most PFAS.",
+    "systems": [
+      "Thyroid",
+      "Reproductive",
+      "Metabolic"
+    ]
+  },
+  {
+    "id": "pfos",
+    "class_id": "pfas",
+    "name": "PFOS",
+    "full_name": "Perfluorooctane sulfonate",
+    "note": "Legacy long-chain PFAS; persistent and widely studied.",
+    "systems": [
+      "Thyroid",
+      "Reproductive",
+      "Metabolic"
+    ]
+  },
+  {
+    "id": "bpa",
+    "class_id": "bisphenols",
+    "name": "BPA",
+    "full_name": "Bisphenol A",
+    "note": "Widely studied bisphenol with estrogen-receptor and other endocrine research.",
+    "systems": [
+      "Reproductive",
+      "Metabolic",
+      "Thyroid-related"
+    ]
+  },
+  {
+    "id": "bps",
+    "class_id": "bisphenols",
+    "name": "BPS",
+    "full_name": "Bisphenol S",
+    "note": "Common BPA substitute with a smaller evidence base than BPA.",
+    "systems": [
+      "Reproductive",
+      "Metabolic"
+    ]
+  },
+  {
+    "id": "dehp",
+    "class_id": "phthalates",
+    "name": "DEHP",
+    "full_name": "Di(2-ethylhexyl) phthalate",
+    "note": "High-molecular-weight phthalate historically used in flexible PVC.",
+    "systems": [
+      "Reproductive",
+      "Metabolic"
+    ]
+  },
+  {
+    "id": "dbp",
+    "class_id": "phthalates",
+    "name": "DBP",
+    "full_name": "Dibutyl phthalate",
+    "note": "Phthalate studied for reproductive and developmental endocrine effects.",
+    "systems": [
+      "Reproductive"
+    ]
+  },
+  {
+    "id": "pcb153",
+    "class_id": "pcbs",
+    "name": "PCB-153",
+    "full_name": "2,2',4,4',5,5'-Hexachlorobiphenyl",
+    "note": "Persistent non-dioxin-like PCB congener often measured in biomonitoring.",
+    "systems": [
+      "Thyroid",
+      "Developmental"
+    ]
+  },
+  {
+    "id": "dde",
+    "class_id": "pesticides",
+    "name": "p,p'-DDE",
+    "full_name": "Dichlorodiphenyldichloroethylene",
+    "note": "Persistent DDT metabolite with anti-androgenic research literature.",
+    "systems": [
+      "Reproductive"
+    ]
+  },
+  {
+    "id": "pbde47",
+    "class_id": "flame-retardants",
+    "name": "BDE-47",
+    "full_name": "2,2',4,4'-Tetrabromodiphenyl ether",
+    "note": "PBDE congener frequently studied in exposure and thyroid-related research.",
+    "systems": [
+      "Thyroid",
+      "Developmental"
+    ]
+  }
+]
