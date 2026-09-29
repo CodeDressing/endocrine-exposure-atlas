@@ -1,0 +1,240 @@
+{
+  "version": "0.1",
+  "principle": "Reduce exposure by targeting known sources and measured contamination first. Prefer actions with low downside, clear exposure logic, and authoritative support; avoid implying that eliminating one product prevents disease.",
+  "tiers": [
+    {
+      "id": "supported",
+      "label": "Well-supported action",
+      "definition": "A practical step with a clear exposure pathway and support from authoritative guidance or established exposure science."
+    },
+    {
+      "id": "precautionary",
+      "label": "Reasonable precaution",
+      "definition": "A low-burden step that may reduce exposure, but the size of the benefit is uncertain or highly context-dependent."
+    },
+    {
+      "id": "uncertain",
+      "label": "Uncertain / avoid overclaiming",
+      "definition": "A claim or consumer practice where evidence is too weak, product-specific, or indirect to present as a reliable health-protection measure."
+    }
+  ],
+  "categories": [
+    {
+      "id": "water",
+      "title": "Drinking water",
+      "summary": "Start with measurement. Water treatment choices should follow the contaminant actually present, its concentration, and validated treatment performance.",
+      "actions": [
+        {
+          "tier": "supported",
+          "action": "Use local water-quality reports or laboratory testing when contamination is a realistic concern.",
+          "rationale": "Testing converts a vague concern into a specific contaminant-and-concentration question.",
+          "limitation": "A test result still needs interpretation against an applicable regulatory or health-based benchmark.",
+          "source_label": "U.S. EPA — Drinking Water",
+          "source_url": "https://www.epa.gov/ground-water-and-drinking-water"
+        },
+        {
+          "tier": "supported",
+          "action": "If a contaminant is confirmed, choose treatment certified for that specific contaminant and maintain it as directed.",
+          "rationale": "Treatment performance depends on technology, certification, installation, and replacement schedule.",
+          "limitation": "No single filter removes every contaminant, and poorly maintained systems can underperform.",
+          "source_label": "U.S. EPA — PFAS treatment information",
+          "source_url": "https://www.epa.gov/sciencematters/reducing-pfas-drinking-water-treatment-technologies"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Use an alternative drinking-water source temporarily when authorities issue a contaminant-specific advisory.",
+          "rationale": "This can reduce ingestion while testing, remediation, or treatment decisions are underway.",
+          "limitation": "The value depends on the contaminant and advisory; bottled water is not automatically contaminant-free.",
+          "source_label": "U.S. EPA — Drinking Water",
+          "source_url": "https://www.epa.gov/ground-water-and-drinking-water"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Food & food contact",
+      "summary": "Food exposure can come from residues, environmental contamination, processing, or food-contact materials. Focus on identifiable sources rather than broad food fear.",
+      "actions": [
+        {
+          "tier": "supported",
+          "action": "Follow official food recalls and contaminant advisories when a specific product or source is identified.",
+          "rationale": "Targeted advisories address a known exposure source rather than an assumed one.",
+          "limitation": "General avoidance beyond the affected product or source may not meaningfully reduce exposure.",
+          "source_label": "FDA — Recalls, Market Withdrawals, & Safety Alerts",
+          "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Avoid repeatedly heating food in worn or damaged food-contact materials when the material is not intended for that use.",
+          "rationale": "Heat, wear, food chemistry, and contact time can influence migration from some materials.",
+          "limitation": "The actual exposure depends on the specific polymer, additive, coating, temperature, and food.",
+          "source_label": "FDA — Food Contact Substances",
+          "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+        },
+        {
+          "tier": "uncertain",
+          "action": "Do not assume that 'chemical-free,' 'natural,' or 'BPA-free' means a product has no endocrine-active chemistry.",
+          "rationale": "Substitution can change the chemical without establishing lower exposure or lower hazard.",
+          "limitation": "A substitute may be safer, equivalent, or less studied; the label alone does not answer that question.",
+          "source_label": "NIEHS — Endocrine Disruptors",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+        }
+      ]
+    },
+    {
+      "id": "cookware",
+      "title": "Cookware",
+      "summary": "Cookware decisions should be based on material, condition, intended use, and temperature—not broad labels such as 'nonstick equals toxic.'",
+      "actions": [
+        {
+          "tier": "supported",
+          "action": "Use cookware according to manufacturer temperature and care instructions.",
+          "rationale": "Material performance and degradation depend strongly on use conditions.",
+          "limitation": "This is a materials-exposure precaution, not evidence that normal use of a specific product causes endocrine harm.",
+          "source_label": "FDA — Food Contact Substances",
+          "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Replace cookware with severely damaged, peeling, or degraded food-contact surfaces.",
+          "rationale": "Physical deterioration can change food contact and migration behavior.",
+          "limitation": "Damage does not identify which chemical, if any, is being transferred at a meaningful dose.",
+          "source_label": "FDA — Food Contact Substances",
+          "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+        },
+        {
+          "tier": "uncertain",
+          "action": "Avoid claims that one cookware material is universally 'toxin-free' or medically superior.",
+          "rationale": "Every material has its own exposure profile, use conditions, and tradeoffs.",
+          "limitation": "Comparisons require compound-specific migration and exposure data.",
+          "source_label": "FDA — Food Contact Substances",
+          "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+        }
+      ]
+    },
+    {
+      "id": "plastics",
+      "title": "Plastics",
+      "summary": "Plastic is a materials category, not one chemical. Reduce unnecessary migration opportunities when practical, while avoiding unsupported blanket claims.",
+      "actions": [
+        {
+          "tier": "precautionary",
+          "action": "For hot food or liquids, use containers intended for the temperature and application.",
+          "rationale": "Heat can increase migration for some polymers or additives.",
+          "limitation": "The magnitude and relevance depend on the exact material and chemical.",
+          "source_label": "FDA — Food Contact Substances",
+          "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Retire heavily worn food-storage plastics when replacement is easy.",
+          "rationale": "Aging, abrasion, and repeated heating can alter material surfaces and migration behavior.",
+          "limitation": "This does not mean that visible wear equals a harmful endocrine dose.",
+          "source_label": "FDA — Food Contact Substances",
+          "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+        },
+        {
+          "tier": "uncertain",
+          "action": "Do not use recycling codes alone as a health-risk score.",
+          "rationale": "A recycling code identifies a resin category, not the full additive package, dose, or endocrine activity.",
+          "limitation": "Risk interpretation requires more information than the code.",
+          "source_label": "NIEHS — Endocrine Disruptors",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+        }
+      ]
+    },
+    {
+      "id": "cosmetics",
+      "title": "Cosmetics & personal care",
+      "summary": "Ingredient identity and frequency of use matter more than broad claims about an entire product category.",
+      "actions": [
+        {
+          "tier": "supported",
+          "action": "Read ingredient labels when trying to avoid a specific known ingredient.",
+          "rationale": "Ingredient-based avoidance is more precise than avoiding an entire category without knowing the formulation.",
+          "limitation": "Some fragrance ingredients may be grouped under permitted labeling conventions, and formulas can change.",
+          "source_label": "FDA — Cosmetics Labeling",
+          "source_url": "https://www.fda.gov/cosmetics/cosmetics-labeling-regulations"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Reduce unnecessary use of multiple fragranced products if fragrance-related exposure is a concern.",
+          "rationale": "Using fewer products can reduce aggregate exposure to some formulation ingredients.",
+          "limitation": "The size of any endocrine-related benefit is uncertain and ingredient-specific.",
+          "source_label": "NIEHS — Endocrine Disruptors",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+        },
+        {
+          "tier": "uncertain",
+          "action": "Do not treat 'clean beauty' or 'natural' marketing as an evidence grade.",
+          "rationale": "Marketing terms do not substitute for ingredient identity, exposure measurement, or toxicology.",
+          "limitation": "Individual products still require ingredient-specific evaluation.",
+          "source_label": "FDA — Cosmetics",
+          "source_url": "https://www.fda.gov/cosmetics"
+        }
+      ]
+    },
+    {
+      "id": "household",
+      "title": "Household dust & indoor environment",
+      "summary": "Indoor dust can carry semi-volatile chemicals released from products and building materials. Source control and routine cleaning can reduce dust contact without implying disease prevention.",
+      "actions": [
+        {
+          "tier": "supported",
+          "action": "Wash hands before eating, especially for children with frequent hand-to-mouth contact.",
+          "rationale": "Hand washing reduces ingestion of dust and residues carried on hands.",
+          "limitation": "It reduces one exposure route and does not eliminate airborne or dietary sources.",
+          "source_label": "NIEHS — Endocrine Disruptors",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Use routine dust control such as damp dusting and effective vacuuming.",
+          "rationale": "Lower dust loading can reduce contact with chemicals that partition into indoor dust.",
+          "limitation": "The actual reduction in a specific endocrine-active chemical depends on the source and room conditions.",
+          "source_label": "NIEHS — Flame Retardants",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/flame_retardants"
+        },
+        {
+          "tier": "supported",
+          "action": "For confirmed PCB-containing building materials, follow professional and regulatory remediation guidance.",
+          "rationale": "PCBs in older materials are a source-specific contamination problem requiring controlled management.",
+          "limitation": "Do not disturb suspect materials solely on the basis of building age; identification and proper handling matter.",
+          "source_label": "U.S. EPA — PCBs in Building Materials",
+          "source_url": "https://www.epa.gov/pcbs/pcbs-building-materials"
+        }
+      ]
+    },
+    {
+      "id": "clothing",
+      "title": "Clothing & textiles",
+      "summary": "Textile treatments vary widely. Product disclosure and actual chemistry matter more than broad assumptions about all clothing.",
+      "actions": [
+        {
+          "tier": "precautionary",
+          "action": "When buying new products, prefer items with clear disclosure if avoiding a specific treatment such as intentionally added PFAS.",
+          "rationale": "Disclosure makes source avoidance more targeted and verifiable.",
+          "limitation": "A marketing claim may not describe every component or legacy contamination source.",
+          "source_label": "U.S. EPA — PFAS Explained",
+          "source_url": "https://www.epa.gov/pfas/pfas-explained"
+        },
+        {
+          "tier": "precautionary",
+          "action": "Avoid replacing functional clothing solely because of a vague chemical concern unless the product chemistry is known.",
+          "rationale": "Replacement can create cost and waste without demonstrating meaningful exposure reduction.",
+          "limitation": "A confirmed contaminated or recalled product is a different situation.",
+          "source_label": "NIEHS — Endocrine Disruptors",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+        },
+        {
+          "tier": "uncertain",
+          "action": "Do not infer internal dose from direct skin contact alone.",
+          "rationale": "Dermal absorption varies by chemical, formulation, skin contact, duration, and physicochemical properties.",
+          "limitation": "Some compounds can be absorbed dermally; the point is that contact and absorbed dose are not equivalent.",
+          "source_label": "NIEHS — Endocrine Disruptors",
+          "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+        }
+      ]
+    }
+  ]
+}
