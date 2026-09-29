@@ -1044,3 +1044,328 @@ h3 { margin-bottom: 8px; font-size: 1rem; }
   .exposure-profile-head { flex-direction: column; }
   .exposure-flow > div:not(.path-connector) { min-height: auto; }
 }
+
+
+/* Biological Pathway Explorer */
+.pathway-explorer-section {
+  background: linear-gradient(180deg, #fbfcfa 0%, #f7f8f5 100%);
+}
+
+.pathway-explorer-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 290px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.pathway-scenario-picker {
+  display: grid;
+  gap: 10px;
+}
+
+.pathway-scenario-button {
+  width: 100%;
+  min-height: 72px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--panel);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.pathway-scenario-button strong,
+.pathway-scenario-button small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.pathway-scenario-button small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: .74rem;
+}
+
+.pathway-scenario-button[aria-pressed="true"],
+.pathway-scenario-button:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  outline: none;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.bio-pathway-panel {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.bio-pathway-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bio-pathway-head h3 {
+  margin-bottom: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.85rem;
+  font-weight: 500;
+}
+
+.bio-pathway-chain {
+  margin: 22px 0;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);
+  gap: 7px;
+  align-items: stretch;
+}
+
+.bio-path-node {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fafbf9;
+}
+
+.bio-path-node span,
+.bio-path-node strong,
+.bio-path-node small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.bio-path-node span {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.bio-path-node strong {
+  font-size: .82rem;
+  line-height: 1.3;
+}
+
+.bio-path-node small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.3;
+}
+
+.bio-path-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.bio-pathway-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.bio-pathway-notes section {
+  padding: 16px;
+  border-radius: 15px;
+  background: var(--warm);
+}
+
+.bio-pathway-notes h4 {
+  margin: 0 0 8px;
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.bio-pathway-notes p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .87rem;
+}
+
+.bio-link-row {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.path-link-button {
+  min-height: 46px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 750;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.path-link-button:hover,
+.path-link-button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  outline: none;
+}
+
+.path-link-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* Mobile-first hardening across the Atlas */
+img, svg { max-width: 100%; height: auto; }
+button, select, a.button { min-height: 44px; }
+select { font-size: 16px; max-width: 100%; }
+.pathway-panel,
+.axis-panel,
+.chemical-profile,
+.exposure-profile,
+.bio-pathway-panel { overflow-wrap: anywhere; }
+.chip-list span { max-width: 100%; overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  .site-header { position: static; }
+  .nav-wrap { flex-wrap: wrap; padding: 10px 0 12px; }
+  nav {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  nav a {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 10px 12px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel);
+    white-space: nowrap;
+  }
+  .pathway-explorer-layout { grid-template-columns: 1fr; }
+  .pathway-scenario-picker {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pathway-scenario-button {
+    flex: 0 0 min(78vw, 310px);
+    scroll-snap-align: start;
+  }
+  .bio-pathway-chain {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bio-path-arrow { display: none; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 16px; overflow-x: hidden; }
+  .shell { width: min(100% - 20px, 1180px); }
+  .site-header .brand { min-width: 0; }
+  .brand strong { font-size: .9rem; }
+  .hero { padding: 48px 0 48px; }
+  .hero-grid { gap: 34px; }
+  .section { padding: 54px 0; }
+  .section-heading { margin-bottom: 24px; gap: 18px; }
+  .section-heading > p { font-size: .9rem; }
+  h1 { font-size: clamp(2.45rem, 13vw, 3.8rem); }
+  h2 { font-size: clamp(1.9rem, 9vw, 2.75rem); }
+  .lede { font-size: 1rem; }
+  .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .hero-actions .button { width: 100%; }
+  .pathway-scenario-button { flex-basis: 88vw; }
+  .bio-pathway-panel { padding: 16px; border-radius: 18px; }
+  .bio-pathway-head { flex-direction: column; gap: 10px; }
+  .bio-pathway-head h3 { font-size: 1.55rem; }
+  .bio-pathway-chain { grid-template-columns: 1fr; gap: 9px; }
+  .bio-path-node { padding: 14px; }
+  .bio-path-node span { font-size: .7rem; }
+  .bio-path-node strong { font-size: .94rem; }
+  .bio-pathway-notes { grid-template-columns: 1fr; }
+  .bio-link-row { display: grid; grid-template-columns: 1fr; }
+  .path-link-button { width: 100%; min-height: 48px; border-radius: 14px; }
+  .source-picker,
+  .axis-picker,
+  .chemical-picker,
+  .exposure-card-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .source-button,
+  .axis-button,
+  .chemical-class-button,
+  .exposure-atlas-button {
+    flex: 0 0 86vw;
+    min-height: 76px;
+  }
+  .pathway-track,
+  .axis-chain,
+  .exposure-flow { grid-template-columns: 1fr; }
+  .pathway-track .path-connector,
+  .exposure-flow .path-connector { display: none; }
+  .axis-chain { display: grid; }
+  .axis-arrow { transform: none; }
+  .axis-arrow::before { content: "↓"; }
+  .axis-arrow { font-size: 0; }
+  .axis-arrow::before { font-size: 1rem; }
+  .chemical-profile-grid,
+  .axis-detail-grid,
+  .chemical-evidence-grid,
+  .pathway-detail { grid-template-columns: 1fr; }
+  .chemical-profile,
+  .axis-panel,
+  .exposure-profile,
+  .pathway-panel { padding: 16px; border-radius: 18px; }
+  .chemical-profile-head,
+  .axis-panel-head,
+  .exposure-profile-head,
+  .pathway-title,
+  .compound-browser-head,
+  .subatlas-head { flex-direction: column; align-items: stretch; }
+  .subatlas-card { padding: 16px; }
+  .subatlas-card select,
+  .compound-browser select { width: 100%; max-width: none; min-height: 48px; }
+  .chip-list span { font-size: .76rem; line-height: 1.25; }
+  .footer-wrap { gap: 10px; }
+}
+
+@media (max-width: 380px) {
+  .shell { width: min(100% - 16px, 1180px); }
+  .brand-mark { width: 38px; height: 38px; border-radius: 11px; }
+  .brand strong { font-size: .84rem; }
+  h1 { font-size: 2.35rem; }
+  h2 { font-size: 1.85rem; }
+  .pathway-scenario-button,
+  .source-button,
+  .axis-button,
+  .chemical-class-button,
+  .exposure-atlas-button { flex-basis: 91vw; }
+}
