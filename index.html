@@ -13,10 +13,10 @@
   <header class="site-header">
     <div class="shell nav-wrap">
       <a class="brand" href="#top" aria-label="Endocrine Exposure Atlas home">
-        <span class="brand-mark" aria-hidden="true">EA</span>
-        <span>
-          <strong>Endocrine Exposure Atlas</strong>
-          <small>Evidence-led environmental health education</small>
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-copy">
+          <strong>Finn Keane</strong>
+          <small>Endocrine Exposure Atlas · Evidence-led environmental health education</small>
         </span>
       </a>
       <nav aria-label="Primary navigation">
@@ -26,6 +26,7 @@
         <a href="#chemicals">Chemical Atlas</a>
         <a href="#evidence">Evidence</a>
         <a href="#reduction-guide">Reduce Exposure</a>
+        <a href="#research-library">Research Library</a>
         <a href="#about">Mission</a>
       </nav>
     </div>
@@ -554,6 +555,51 @@
       </div>
     </section>
 
+    <section class="section research-library-section" id="research-library">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RESEARCH LIBRARY</p>
+            <h2>Authoritative sources and peer-reviewed literature behind the Atlas.</h2>
+          </div>
+          <p>Search the library by chemical, topic, organization, or study type. Source inclusion supports transparency; it does not mean every conclusion in a source is adopted without qualification.</p>
+        </div>
+
+        <div class="library-principle">
+          <strong>Library rule:</strong>
+          <span id="libraryPrinciple">Loading research framework…</span>
+        </div>
+
+        <div class="library-controls">
+          <label class="library-search-wrap">
+            <span>Search</span>
+            <input id="librarySearch" type="search" placeholder="PFAS, thyroid, BPA, EPA…" autocomplete="off">
+          </label>
+          <label>
+            <span>Source type</span>
+            <select id="libraryTypeFilter" aria-label="Filter research library by source type">
+              <option value="all">All source types</option>
+            </select>
+          </label>
+          <label>
+            <span>Organization</span>
+            <select id="libraryOrgFilter" aria-label="Filter research library by organization">
+              <option value="all">All organizations</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="library-summary-row">
+          <span id="libraryCount">0 sources</span>
+          <button type="button" id="libraryClearFilters" class="library-clear-button">Clear filters</button>
+        </div>
+
+        <div class="research-library-grid" id="researchLibraryGrid" aria-live="polite">
+          <p class="loading">Loading research library…</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-alt" id="about">
       <div class="shell mission-grid">
         <div>
@@ -591,7 +637,7 @@
         <strong>Endocrine Exposure Atlas</strong>
         <p>Evidence-led environmental health education.</p>
       </div>
-      <p>Version 0.7 · Exposure-Reduction Guide</p>
+      <p>Version 0.8 · Research Library</p>
     </div>
   </footer>
 
