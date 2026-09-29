@@ -2,43 +2,286 @@
   {
     "id": "pfas",
     "name": "PFAS",
-    "status": "Class of thousands",
-    "summary": "Per- and polyfluoroalkyl substances are a diverse chemical class. Persistence, exposure, toxicokinetics, and biological effects vary by compound; the Atlas will keep those distinctions explicit.",
-    "tags": ["persistence", "water", "food", "textiles"]
+    "full_name": "Per- and polyfluoroalkyl substances",
+    "status": "Large chemical class",
+    "scope": "Thousands of compounds; toxicology and persistence vary substantially by compound.",
+    "summary": "PFAS are used across industrial and consumer applications and are notable for environmental persistence. Endocrine-related findings are strongest for selected, well-studied PFAS rather than the class as a whole.",
+    "representative_compounds": [
+      "PFOA",
+      "PFOS",
+      "PFHxS",
+      "PFNA",
+      "GenX chemicals / HFPO-DA"
+    ],
+    "common_contexts": [
+      "Drinking water contamination",
+      "Firefighting foams",
+      "Stain- or water-resistant treatments",
+      "Some food-contact materials",
+      "Industrial processes"
+    ],
+    "exposure_routes": [
+      "Ingestion",
+      "Inhalation",
+      "Dust/soil ingestion",
+      "Occupational exposure"
+    ],
+    "endocrine_systems": [
+      "Thyroid axis",
+      "Reproductive axis",
+      "Metabolic signaling"
+    ],
+    "mechanistic_domains": [
+      "Hormone signaling",
+      "Lipid metabolism",
+      "Nuclear receptor pathways",
+      "Thyroid hormone homeostasis"
+    ],
+    "evidence_summary": "EPA states that some PFAS are associated with reproductive, developmental, immune, hormonal and metabolic effects, while emphasizing that thousands of PFAS remain incompletely characterized.",
+    "key_uncertainty": "Do not generalize a finding from PFOA or PFOS to every PFAS.",
+    "source_label": "U.S. EPA — PFAS Explained / Human Health Risks",
+    "source_url": "https://www.epa.gov/pfas/our-current-understanding-human-health-and-environmental-risks-pfas",
+    "tags": [
+      "persistence",
+      "water",
+      "food",
+      "textiles"
+    ]
   },
   {
     "id": "bisphenols",
     "name": "Bisphenols",
+    "full_name": "Bisphenol family",
     "status": "Compound-specific",
-    "summary": "A family including BPA and related compounds studied for interactions with hormone signaling and for exposure from selected materials and products.",
-    "tags": ["receptors", "food contact", "materials"]
+    "scope": "Includes BPA and structurally related substitutes such as BPS and BPF.",
+    "summary": "Bisphenols are used in some polymers and resins. BPA has extensive endocrine-mechanism literature, but regulatory conclusions and risk interpretations depend on exposure level, endpoint and jurisdiction.",
+    "representative_compounds": [
+      "BPA",
+      "BPS",
+      "BPF"
+    ],
+    "common_contexts": [
+      "Polycarbonate plastics",
+      "Some can coatings",
+      "Thermal paper",
+      "Selected resins and consumer materials"
+    ],
+    "exposure_routes": [
+      "Ingestion",
+      "Dermal contact",
+      "Dust"
+    ],
+    "endocrine_systems": [
+      "Reproductive axis",
+      "Metabolic signaling",
+      "Thyroid-related signaling"
+    ],
+    "mechanistic_domains": [
+      "Estrogen receptor signaling",
+      "Steroid receptor crosstalk",
+      "Rapid membrane-associated signaling",
+      "Gene-expression changes"
+    ],
+    "evidence_summary": "NIEHS includes BPA among endocrine-disrupting chemicals; FDA states that current approved uses of BPA in food containers and packaging remain safe at current exposure levels.",
+    "key_uncertainty": "Hazard evidence, endocrine activity and regulatory risk conclusions are not the same claim.",
+    "source_label": "NIEHS — Endocrine Disruptors; FDA — BPA",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine",
+    "tags": [
+      "receptors",
+      "food contact",
+      "materials"
+    ]
   },
   {
     "id": "phthalates",
     "name": "Phthalates",
-    "status": "Compound-specific",
-    "summary": "A group of chemicals used in several material and product applications. Exposure patterns and endocrine-related evidence differ substantially among individual phthalates and metabolites.",
-    "tags": ["plasticizers", "personal care", "metabolites"]
+    "full_name": "Phthalate esters",
+    "status": "Multiple compounds and metabolites",
+    "scope": "A broad group used mainly as plasticizers or in selected formulations; exposure and toxicology differ by compound.",
+    "summary": "Phthalates include high- and low-molecular-weight compounds with different uses. Biomonitoring often measures urinary metabolites rather than the parent compounds.",
+    "representative_compounds": [
+      "DEHP",
+      "DBP",
+      "DiBP",
+      "BBP",
+      "DEP",
+      "DINP"
+    ],
+    "common_contexts": [
+      "Flexible PVC",
+      "Food-contact materials",
+      "Fragrances and personal care products",
+      "Medical tubing",
+      "Building materials"
+    ],
+    "exposure_routes": [
+      "Ingestion",
+      "Inhalation",
+      "Dermal absorption",
+      "Medical-device exposure"
+    ],
+    "endocrine_systems": [
+      "Reproductive axis",
+      "Adrenal/steroidogenesis",
+      "Metabolic signaling"
+    ],
+    "mechanistic_domains": [
+      "Anti-androgenic pathways",
+      "Steroidogenesis",
+      "PPAR signaling",
+      "Developmental endocrine signaling"
+    ],
+    "evidence_summary": "NIEHS identifies phthalates as endocrine-disrupting chemicals and notes that they are present in many plastics, cosmetics, fragrances and medical products.",
+    "key_uncertainty": "Individual phthalates differ markedly; metabolite, timing and life stage matter.",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine",
+    "tags": [
+      "plasticizers",
+      "personal care",
+      "metabolites"
+    ]
   },
   {
     "id": "pcbs",
     "name": "PCBs",
-    "status": "Legacy pollutants",
-    "summary": "Polychlorinated biphenyls are persistent legacy pollutants. Although U.S. manufacture was banned decades ago, environmental persistence keeps them relevant to exposure science.",
-    "tags": ["legacy", "persistence", "environment"]
+    "full_name": "Polychlorinated biphenyls",
+    "status": "Legacy persistent pollutants",
+    "scope": "209 congeners with different biological behavior; commercial mixtures contained many congeners.",
+    "summary": "PCBs were widely used in electrical and industrial applications before U.S. production was banned. Their persistence and bioaccumulation keep them relevant to contemporary exposure science.",
+    "representative_compounds": [
+      "PCB-28",
+      "PCB-52",
+      "PCB-101",
+      "PCB-138",
+      "PCB-153",
+      "PCB-180"
+    ],
+    "common_contexts": [
+      "Legacy electrical equipment",
+      "Contaminated sediment and soil",
+      "Older building materials",
+      "Food-chain bioaccumulation"
+    ],
+    "exposure_routes": [
+      "Dietary ingestion",
+      "Inhalation of contaminated indoor air",
+      "Soil/dust ingestion",
+      "Occupational exposure"
+    ],
+    "endocrine_systems": [
+      "Thyroid axis",
+      "Reproductive axis",
+      "Developmental signaling"
+    ],
+    "mechanistic_domains": [
+      "Thyroid hormone transport/homeostasis",
+      "Aryl hydrocarbon receptor pathways for some congeners",
+      "Neuroendocrine effects",
+      "Steroid signaling"
+    ],
+    "evidence_summary": "EPA reports endocrine effects in animal studies and human evidence suggesting associations between PCB exposure and altered thyroid hormone levels.",
+    "key_uncertainty": "PCB congeners differ; dioxin-like and non-dioxin-like PCBs should not be treated as one mechanism.",
+    "source_label": "U.S. EPA — Health Effects of PCBs",
+    "source_url": "https://www.epa.gov/pcbs/health-effects-pcbs",
+    "tags": [
+      "legacy",
+      "persistence",
+      "environment"
+    ]
   },
   {
     "id": "pesticides",
     "name": "Selected pesticides",
-    "status": "Not one mechanism",
-    "summary": "Pesticides span many chemical families and modes of action. Endocrine activity must be evaluated substance by substance rather than generalized to every pesticide.",
-    "tags": ["agriculture", "mechanisms", "regulation"]
+    "full_name": "Pesticides with endocrine-active evidence",
+    "status": "Heterogeneous category",
+    "scope": "Pesticide is a use category, not a single chemical family or endocrine mechanism.",
+    "summary": "Some pesticides have endocrine-active evidence, while many others act primarily through unrelated toxicological mechanisms. Each active ingredient needs its own profile.",
+    "representative_compounds": [
+      "DDT / DDE",
+      "Atrazine",
+      "Vinclozolin",
+      "Chlorpyrifos"
+    ],
+    "common_contexts": [
+      "Agricultural use",
+      "Residential pest control",
+      "Food residues",
+      "Legacy environmental contamination"
+    ],
+    "exposure_routes": [
+      "Dietary ingestion",
+      "Inhalation",
+      "Dermal contact",
+      "Occupational exposure"
+    ],
+    "endocrine_systems": [
+      "Reproductive axis",
+      "Thyroid axis",
+      "Developmental signaling"
+    ],
+    "mechanistic_domains": [
+      "Estrogenic/anti-estrogenic activity",
+      "Anti-androgenic activity",
+      "Steroidogenesis",
+      "Neuroendocrine regulation"
+    ],
+    "evidence_summary": "NIEHS identifies organochlorines, organophosphates and DDT among endocrine-disruption research areas, but pesticide mechanisms are highly substance-specific.",
+    "key_uncertainty": "Do not label 'pesticides' as uniformly endocrine-disrupting; the active ingredient and evidence endpoint must be specified.",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/research/supported/exposure/endocrine",
+    "tags": [
+      "agriculture",
+      "mechanisms",
+      "regulation"
+    ]
   },
   {
     "id": "flame-retardants",
     "name": "Flame retardants",
-    "status": "Multiple classes",
-    "summary": "Flame retardants comprise several chemical classes with different uses, persistence profiles, exposure routes, and biological evidence.",
-    "tags": ["indoor environment", "materials", "dust"]
+    "full_name": "Flame-retardant chemical families",
+    "status": "Multiple chemical classes",
+    "scope": "A functional category including brominated, chlorinated, organophosphate and other chemistries.",
+    "summary": "Flame retardants are added to materials to slow ignition or fire spread. Their endocrine properties, persistence and exposure pathways vary considerably by chemical.",
+    "representative_compounds": [
+      "PBDEs",
+      "HBCD",
+      "TBBPA",
+      "TCEP",
+      "TDCIPP",
+      "TPHP"
+    ],
+    "common_contexts": [
+      "Furniture foam",
+      "Electronics",
+      "Building insulation",
+      "Textiles",
+      "Vehicle interiors"
+    ],
+    "exposure_routes": [
+      "Dust ingestion",
+      "Inhalation",
+      "Dermal contact",
+      "Dietary exposure"
+    ],
+    "endocrine_systems": [
+      "Thyroid axis",
+      "Reproductive axis",
+      "Developmental signaling"
+    ],
+    "mechanistic_domains": [
+      "Thyroid hormone homeostasis",
+      "Nuclear receptor signaling",
+      "Steroidogenesis",
+      "Developmental neuroendocrine effects"
+    ],
+    "evidence_summary": "NIEHS reports endocrine and thyroid concerns for several flame-retardant families, including brominated flame retardants, while emphasizing that flame retardants are chemically diverse.",
+    "key_uncertainty": "The term 'flame retardant' describes function, not one chemistry or one risk profile.",
+    "source_label": "NIEHS — Flame Retardants",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/flame_retardants",
+    "tags": [
+      "indoor environment",
+      "materials",
+      "dust"
+    ]
   }
 ]
