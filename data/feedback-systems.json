@@ -1,0 +1,7 @@
+[
+  {"name":"Negative feedback","example":"HPT axis","description":"Downstream hormone activity suppresses upstream drive, stabilizing output around a regulated range.","sequence":["Hypothalamus: TRH","Pituitary: TSH","Thyroid: T4/T3","T4/T3 inhibit upstream TRH/TSH drive"]},
+  {"name":"Positive feedback","example":"Pre-ovulatory estradiol and LH surge","description":"Under specific physiological conditions, a downstream signal amplifies upstream activity for a limited event.","sequence":["Rising estradiol","Hypothalamic/pituitary response changes","LH surge","Ovulatory event"]},
+  {"name":"Pulsatile signaling","example":"GnRH and GH","description":"Information is encoded partly in pulse frequency and amplitude, so a single concentration does not capture the whole system.","sequence":["Neural pulse generator","Intermittent hormone release","Receptor response","Time-dependent target effect"]},
+  {"name":"Circadian / ultradian control","example":"Cortisol","description":"Hormone output changes predictably with biological time and shorter oscillations, complicating one-time measurements.","sequence":["Central clock and neural inputs","HPA drive","Cortisol rhythm","Feedback to brain and pituitary"]},
+  {"name":"Distributed metabolic feedback","example":"Insulin–glucagon network","description":"Nutrients, organs and neural inputs form a network rather than a single linear endocrine axis.","sequence":["Nutrient state","Pancreas/gut/adipose signals","Liver-muscle-adipose responses","Changing glucose and nutrient state"]}
+]
