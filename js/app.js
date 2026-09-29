@@ -11,7 +11,8 @@ const state = {
   evidenceMeta: null,
   evidenceRecords: [],
   activeEvidenceType: "all",
-  activeEvidenceRecord: null
+  activeEvidenceRecord: null,
+  reductionGuide: null
 };
 
 const els = {
@@ -122,7 +123,13 @@ const els = {
   evidenceRecordFinding: document.querySelector("#evidenceRecordFinding"),
   evidenceRecordLimitations: document.querySelector("#evidenceRecordLimitations"),
   evidencePathwayLinks: document.querySelector("#evidencePathwayLinks"),
-  evidenceRecordSource: document.querySelector("#evidenceRecordSource")
+  evidenceRecordSource: document.querySelector("#evidenceRecordSource"),
+  reductionPrinciple: document.querySelector("#reductionPrinciple"),
+  reductionTierKey: document.querySelector("#reductionTierKey"),
+  reductionCategoryPicker: document.querySelector("#reductionCategoryPicker"),
+  reductionCategoryName: document.querySelector("#reductionCategoryName"),
+  reductionCategorySummary: document.querySelector("#reductionCategorySummary"),
+  reductionActionList: document.querySelector("#reductionActionList")
 };
 
 async function loadJson(path) {
@@ -132,6 +139,69 @@ async function loadJson(path) {
 }
 
 
+
+
+function reductionTierMeta(tierId) {
+  return state.reductionGuide?.tiers?.find(item => item.id === tierId);
+}
+
+function renderReductionGuide() {
+  const guide = state.reductionGuide;
+  if (!guide) return;
+
+  els.reductionPrinciple.textContent = guide.principle;
+  els.reductionTierKey.innerHTML = guide.tiers.map(item => `
+    <div class="reduction-tier reduction-tier-${item.id}">
+      <strong>${item.label}</strong>
+      <span>${item.definition}</span>
+    </div>
+  `).join("");
+
+  els.reductionCategoryPicker.innerHTML = "";
+  guide.categories.forEach((category, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "reduction-category-button";
+    button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+    button.innerHTML = `<strong>${category.title}</strong><small>${category.actions.length} actions</small>`;
+    button.addEventListener("click", () => {
+      els.reductionCategoryPicker.querySelectorAll(".reduction-category-button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      renderReductionCategory(category);
+    });
+    els.reductionCategoryPicker.appendChild(button);
+  });
+
+  if (guide.categories[0]) renderReductionCategory(guide.categories[0]);
+}
+
+function renderReductionCategory(category) {
+  els.reductionCategoryName.textContent = category.title;
+  els.reductionCategorySummary.textContent = category.summary;
+  els.reductionActionList.innerHTML = category.actions.map((item, index) => {
+    const tier = reductionTierMeta(item.tier);
+    return `
+      <section class="reduction-action-card reduction-action-${item.tier}">
+        <div class="reduction-action-top">
+          <span class="reduction-action-number">${String(index + 1).padStart(2, "0")}</span>
+          <span class="reduction-tier-badge">${tier?.label || item.tier}</span>
+        </div>
+        <h4>${item.action}</h4>
+        <div class="reduction-action-detail">
+          <div>
+            <strong>Why it may help</strong>
+            <p>${item.rationale}</p>
+          </div>
+          <div>
+            <strong>Limitation</strong>
+            <p>${item.limitation}</p>
+          </div>
+        </div>
+        <a class="source-inline" href="${item.source_url}" target="_blank" rel="noopener noreferrer">${item.source_label} ↗</a>
+      </section>
+    `;
+  }).join("");
+}
 
 function evidenceTypeLabel(typeId) {
   const type = state.evidenceMeta?.evidence_types?.find(item => item.id === typeId);
@@ -566,7 +636,7 @@ function renderFeedback(item) {
 
 async function init() {
   try {
-    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways, evidenceMeta, evidenceRecords] = await Promise.all([
+    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways, evidenceMeta, evidenceRecords, reductionGuide] = await Promise.all([
       loadJson("data/exposures.json"),
       loadJson("data/chemicals.json"),
       loadJson("data/endocrine-systems.json"),
@@ -576,7 +646,8 @@ async function init() {
       loadJson("data/compounds.json"),
       loadJson("data/pathways.json"),
       loadJson("data/evidence.json"),
-      loadJson("data/evidence-records.json")
+      loadJson("data/evidence-records.json"),
+      loadJson("data/reduction-guide.json")
     ]);
 
     state.exposures = exposures;
@@ -589,9 +660,11 @@ async function init() {
     state.pathways = pathways;
     state.evidenceMeta = evidenceMeta;
     state.evidenceRecords = evidenceRecords;
+    state.reductionGuide = reductionGuide;
 
     renderPathwayScenarios();
     renderEvidenceEngine();
+    renderReductionGuide();
     setupPathwayDeepLinks();
     renderExposureButtons();
     renderExposureAtlas();
