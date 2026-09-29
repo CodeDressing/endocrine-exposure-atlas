@@ -427,34 +427,89 @@
       </div>
     </section>
 
-    <section class="section" id="evidence">
-      <div class="shell evidence-layout">
-        <div>
-          <p class="eyebrow">EVIDENCE STANDARD</p>
-          <h2>Every claim should show what kind of evidence supports it.</h2>
-          <p class="lede compact">
-            A laboratory mechanism, an animal finding, a human association, and a replicated causal result
-            are not interchangeable. The Atlas keeps those categories visible.
-          </p>
+    <section class="section evidence-engine-section" id="evidence">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EVIDENCE ENGINE</p>
+            <h2>Human, animal, mechanistic, and synthesis evidence stay separate.</h2>
+          </div>
+          <p>Evidence strength is claim-specific. The engine shows study type, population or species, finding, limitations, replication status, reviewer status, and source.</p>
         </div>
 
-        <div class="evidence-scale" id="evidenceScale">
-          <div class="evidence-row">
-            <span class="grade grade-1">A</span>
-            <div><strong>Established / high confidence</strong><small>Converging high-quality evidence or authoritative assessment for the specific claim.</small></div>
+        <div class="evidence-principle">
+          <strong>Core rule:</strong>
+          <span id="evidencePrinciple">Loading evidence framework…</span>
+        </div>
+
+        <div class="evidence-type-tabs" id="evidenceTypeTabs" role="tablist" aria-label="Evidence types"></div>
+
+        <div class="evidence-engine-layout">
+          <div>
+            <div class="evidence-filter-bar">
+              <label>
+                <span>Chemical / compound</span>
+                <select id="evidenceChemicalFilter" aria-label="Filter evidence by chemical">
+                  <option value="all">All chemicals</option>
+                </select>
+              </label>
+              <label>
+                <span>Evidence strength</span>
+                <select id="evidenceGradeFilter" aria-label="Filter evidence by grade">
+                  <option value="all">All grades</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="evidence-record-list" id="evidenceRecordList" aria-live="polite">
+              <p class="loading">Loading evidence records…</p>
+            </div>
           </div>
-          <div class="evidence-row">
-            <span class="grade grade-2">B</span>
-            <div><strong>Moderate evidence</strong><small>Meaningful evidence with remaining uncertainty, limitations, or incomplete replication.</small></div>
+
+          <aside class="evidence-detail-panel" id="evidenceDetailPanel" aria-live="polite">
+            <div class="evidence-detail-head">
+              <div>
+                <p class="mini-label">SELECTED EVIDENCE RECORD</p>
+                <h3 id="evidenceRecordChemical">—</h3>
+              </div>
+              <span class="evidence-grade-large" id="evidenceRecordGrade">—</span>
+            </div>
+
+            <p class="evidence-claim" id="evidenceRecordClaim">Select an evidence record.</p>
+
+            <dl class="evidence-facts">
+              <div><dt>Evidence type</dt><dd id="evidenceRecordType">—</dd></div>
+              <div><dt>Study type</dt><dd id="evidenceRecordStudy">—</dd></div>
+              <div><dt>Population / species</dt><dd id="evidenceRecordPopulation">—</dd></div>
+              <div><dt>Replication</dt><dd id="evidenceRecordReplication">—</dd></div>
+              <div><dt>Review status</dt><dd id="evidenceRecordReviewer">—</dd></div>
+            </dl>
+
+            <div class="evidence-detail-block">
+              <h4>Finding</h4>
+              <p id="evidenceRecordFinding">—</p>
+            </div>
+
+            <div class="evidence-detail-block limitation">
+              <h4>Limitations</h4>
+              <p id="evidenceRecordLimitations">—</p>
+            </div>
+
+            <div class="evidence-pathway-links">
+              <h4>Linked biological pathways</h4>
+              <div class="chip-list" id="evidencePathwayLinks"></div>
+            </div>
+
+            <a id="evidenceRecordSource" class="source-inline" href="#" target="_blank" rel="noopener noreferrer">Source ↗</a>
+          </aside>
+        </div>
+
+        <div class="evidence-scale-wrap">
+          <div>
+            <p class="mini-label">CLAIM-SPECIFIC CONFIDENCE SCALE</p>
+            <p class="scale-explainer">The letter grade belongs to the specific claim shown in a record—not to an entire chemical or product category.</p>
           </div>
-          <div class="evidence-row">
-            <span class="grade grade-3">C</span>
-            <div><strong>Emerging / limited evidence</strong><small>Early human, animal, or mechanistic evidence that does not justify a strong conclusion.</small></div>
-          </div>
-          <div class="evidence-row">
-            <span class="grade grade-4">?</span>
-            <div><strong>Uncertain / unresolved</strong><small>Insufficient, inconsistent, compound-specific, or context-dependent evidence.</small></div>
-          </div>
+          <div class="evidence-scale" id="evidenceScale"></div>
         </div>
       </div>
     </section>
@@ -496,7 +551,7 @@
         <strong>Endocrine Exposure Atlas</strong>
         <p>Evidence-led environmental health education.</p>
       </div>
-      <p>Version 0.5 · Biological Pathway Explorer</p>
+      <p>Version 0.6 · Evidence Engine</p>
     </div>
   </footer>
 
