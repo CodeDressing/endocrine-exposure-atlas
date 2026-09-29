@@ -512,3 +512,216 @@ h3 { margin-bottom: 8px; font-size: 1rem; }
   .path-step { min-height: auto; }
   .footer-wrap { align-items: flex-start; flex-direction: column; }
 }
+
+
+/* Endocrine System Atlas */
+.endocrine-section {
+  background: linear-gradient(180deg, #f7f8f5 0%, #f2f5f1 100%);
+}
+
+.endocrine-atlas {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.axis-picker {
+  display: grid;
+  gap: 10px;
+}
+
+.axis-button {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--panel);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.axis-button strong, .axis-button small { display: block; }
+.axis-button small { margin-top: 3px; color: var(--muted); font-size: .74rem; }
+.axis-button[aria-pressed="true"], .axis-button:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  outline: none;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.axis-panel {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.axis-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.axis-panel-head h3 {
+  margin-bottom: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.axis-purpose { margin: 0; color: var(--muted); max-width: 760px; }
+.mini-label { margin: 0 0 6px; color: var(--accent); font-size: .68rem; font-weight: 850; letter-spacing: .12em; }
+
+.axis-chain {
+  margin: 24px 0;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.axis-node {
+  min-width: 145px;
+  flex: 1 0 145px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fafbf9;
+}
+
+.axis-node span, .axis-node strong { display: block; }
+.axis-node span { margin-bottom: 7px; color: var(--accent); font-size: .7rem; font-weight: 850; }
+.axis-node strong { line-height: 1.25; }
+.axis-arrow { display: grid; place-items: center; color: var(--accent); font-weight: 900; }
+
+.axis-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.axis-detail-grid section {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fcfdfb;
+}
+
+.axis-detail-grid h4, .axis-explanation h4 {
+  margin: 0 0 10px;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.chip-list { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip-list span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: .73rem;
+  font-weight: 700;
+}
+
+.axis-explanation {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.axis-explanation > div {
+  padding: 16px;
+  border-radius: 15px;
+  background: var(--warm);
+}
+
+.axis-explanation p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+.source-inline {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--accent);
+  font-size: .82rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.subatlas-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.subatlas-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+}
+
+.subatlas-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.subatlas-card select {
+  max-width: 180px;
+  min-height: 38px;
+  padding: 7px 30px 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+}
+
+.subatlas-card h3 {
+  margin: 18px 0 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.fact-list { margin: 0; }
+.fact-list div {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.fact-list dt { color: var(--muted); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+.fact-list dd { margin: 3px 0 0; font-size: .88rem; }
+
+.feedback-sequence {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: .87rem;
+}
+.feedback-sequence li { margin-bottom: 7px; }
+
+@media (max-width: 900px) {
+  .endocrine-atlas { grid-template-columns: 1fr; }
+  .axis-picker { grid-template-columns: repeat(2, 1fr); }
+  .subatlas-grid { grid-template-columns: 1fr; }
+  .axis-explanation { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .axis-picker, .axis-detail-grid { grid-template-columns: 1fr; }
+  .axis-panel { padding: 18px; }
+  .axis-panel-head { flex-direction: column; }
+  .axis-chain { display: grid; overflow: visible; }
+  .axis-node { min-width: 0; }
+  .axis-arrow { transform: rotate(90deg); }
+  .subatlas-head { align-items: flex-start; flex-direction: column; }
+  .subatlas-card select { width: 100%; max-width: none; }
+}
