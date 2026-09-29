@@ -21,6 +21,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#explorer">Explorer</a>
+        <a href="#exposure-atlas">Exposure Atlas</a>
         <a href="#endocrine">Endocrine Atlas</a>
         <a href="#chemicals">Chemical Atlas</a>
         <a href="#evidence">Evidence</a>
@@ -137,6 +138,95 @@
       </div>
     </section>
 
+
+
+    <section class="section exposure-section" id="exposure-atlas">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPOSURE ATLAS</p>
+            <h2>Food, water, cookware, clothing, plastics, cosmetics and household exposure.</h2>
+          </div>
+          <p>Exposure is not the same as hazard. Select a context to see likely chemical classes, routes into the body, drivers of dose, and the questions needed to evaluate a real-world exposure.</p>
+        </div>
+
+        <div class="exposure-atlas-grid">
+          <div class="exposure-card-grid" id="exposureAtlasGrid" aria-label="Exposure categories"></div>
+
+          <article class="exposure-profile" aria-live="polite">
+            <div class="exposure-profile-head">
+              <div>
+                <p class="mini-label">SELECTED EXPOSURE CONTEXT</p>
+                <h3 id="exposureName">Loading exposure data…</h3>
+                <p id="exposureSubtitle" class="chemical-subtitle"></p>
+              </div>
+              <span class="evidence-badge" id="exposureEvidence">—</span>
+            </div>
+
+            <p id="exposureSummary" class="chemical-summary"></p>
+
+            <div class="exposure-flow">
+              <div>
+                <span>Source/context</span>
+                <strong id="exposureSource">—</strong>
+              </div>
+              <div class="path-connector" aria-hidden="true">→</div>
+              <div>
+                <span>Chemical classes</span>
+                <strong id="exposureChemical">—</strong>
+              </div>
+              <div class="path-connector" aria-hidden="true">→</div>
+              <div>
+                <span>Routes</span>
+                <strong id="exposureRoute">—</strong>
+              </div>
+              <div class="path-connector" aria-hidden="true">→</div>
+              <div>
+                <span>Research focus</span>
+                <strong id="exposureSystem">—</strong>
+              </div>
+            </div>
+
+            <div class="chemical-profile-grid exposure-detail-grid">
+              <section>
+                <h4>Chemical classes of interest</h4>
+                <div class="chip-list" id="exposureClasses"></div>
+              </section>
+              <section>
+                <h4>Example contexts</h4>
+                <div class="chip-list" id="exposureExamples"></div>
+              </section>
+              <section>
+                <h4>Exposure routes</h4>
+                <div class="chip-list" id="exposureRoutes"></div>
+              </section>
+              <section>
+                <h4>What drives dose?</h4>
+                <div class="chip-list" id="exposureDrivers"></div>
+              </section>
+            </div>
+
+            <div class="exposure-question-box">
+              <h4>Questions to ask before making a risk claim</h4>
+              <ol id="exposureQuestions"></ol>
+            </div>
+
+            <div class="chemical-evidence-grid">
+              <div>
+                <h4>Interpretation</h4>
+                <p id="exposureInterpretation"></p>
+              </div>
+              <div>
+                <h4>Critical limitation</h4>
+                <p id="exposureLimitation"></p>
+              </div>
+            </div>
+
+            <a id="exposureSourceLink" class="source-inline" href="#" target="_blank" rel="noopener noreferrer">Source ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="section endocrine-section" id="endocrine">
       <div class="shell">
@@ -389,7 +479,7 @@
         <strong>Endocrine Exposure Atlas</strong>
         <p>Evidence-led environmental health education.</p>
       </div>
-      <p>Version 0.3 · Chemical Atlas</p>
+      <p>Version 0.4 · Exposure Atlas</p>
     </div>
   </footer>
 
