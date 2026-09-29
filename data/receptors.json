@@ -1,0 +1,10 @@
+[
+  {"name":"THRA / THRB","type":"Nuclear receptors","ligands":["T3"],"signaling":"Ligand-regulated transcription","why_it_matters":"A chemical can alter thyroid signaling without changing circulating hormone concentration if it changes transport, metabolism or receptor-level action."},
+  {"name":"ERα / ERβ","type":"Nuclear receptors","ligands":["Estradiol"],"signaling":"Genomic and rapid signaling","why_it_matters":"Estrogenic activity is a major mechanistic domain in endocrine-disruption research."},
+  {"name":"AR","type":"Nuclear receptor","ligands":["Testosterone","DHT"],"signaling":"Ligand-regulated transcription","why_it_matters":"Androgen agonism, antagonism and altered steroidogenesis are distinct mechanisms."},
+  {"name":"GR","type":"Nuclear receptor","ligands":["Cortisol"],"signaling":"Genomic and non-genomic glucocorticoid signaling","why_it_matters":"Stress-axis endpoints can reflect receptor signaling as well as altered hormone secretion."},
+  {"name":"TSHR","type":"GPCR","ligands":["TSH"],"signaling":"Primarily Gs/cAMP with additional pathways","why_it_matters":"Endocrine signaling can be disrupted upstream at gland stimulation, not only at final hormone receptors."},
+  {"name":"INSR","type":"Receptor tyrosine kinase","ligands":["Insulin"],"signaling":"PI3K-AKT and MAPK-linked pathways","why_it_matters":"Metabolic endocrine effects involve both hormone concentration and tissue sensitivity."},
+  {"name":"GHR","type":"Cytokine receptor family","ligands":["Growth hormone"],"signaling":"JAK2-STAT and related pathways","why_it_matters":"Growth signaling illustrates endocrine crosstalk with metabolism and tissue-specific responses."},
+  {"name":"OXTR","type":"GPCR","ligands":["Oxytocin"],"signaling":"Gq/PLC-calcium signaling","why_it_matters":"Not all endocrine systems follow a classic hypothalamus→pituitary→peripheral-gland architecture."}
+]
