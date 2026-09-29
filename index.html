@@ -79,65 +79,82 @@
       </div>
     </section>
 
-    <section class="section" id="explorer">
+    <section class="section pathway-explorer-section" id="explorer">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">INTERACTIVE PATHWAY EXPLORER</p>
-            <h2>Start with an everyday exposure context.</h2>
+            <p class="eyebrow">BIOLOGICAL PATHWAY EXPLORER</p>
+            <h2>Trace a real pathway from product to endocrine system.</h2>
           </div>
-          <p>Select a source to trace a simplified, evidence-aware route through the Atlas.</p>
+          <p>Select a documented scenario. The Atlas keeps product context, chemical identity, exposure route, molecular target, endocrine system, and uncertainty separate.</p>
         </div>
 
-        <div class="explorer-grid">
-          <div class="source-picker" id="sourcePicker" role="list" aria-label="Exposure contexts"></div>
+        <div class="pathway-explorer-layout">
+          <div class="pathway-scenario-picker" id="pathwayScenarioPicker" role="list" aria-label="Biological pathway scenarios">
+            <p class="loading">Loading pathway scenarios…</p>
+          </div>
 
-          <article class="pathway-panel" aria-live="polite">
-            <div class="pathway-title">
+          <article class="bio-pathway-panel" aria-live="polite">
+            <div class="bio-pathway-head">
               <div>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span id="pathwayContext">Select an exposure context</span>
+                <p class="mini-label">SELECTED PATHWAY</p>
+                <h3 id="bioPathwayTitle">Loading pathway…</h3>
+                <p id="bioPathwayEvidenceLabel" class="chemical-subtitle"></p>
               </div>
-              <span class="evidence-badge" id="pathwayEvidence">—</span>
+              <span class="evidence-badge" id="bioPathwayGrade">—</span>
             </div>
 
-            <div class="pathway-track">
-              <div class="path-step">
-                <span>Source</span>
-                <strong id="pathSource">—</strong>
+            <div class="bio-pathway-chain" aria-label="Product to endocrine system pathway">
+              <div class="bio-path-node">
+                <span>01 · Product / source</span>
+                <strong id="bioProduct">—</strong>
               </div>
-              <div class="path-connector" aria-hidden="true">→</div>
-              <div class="path-step">
-                <span>Chemical / class</span>
-                <strong id="pathChemical">—</strong>
+              <div class="bio-path-arrow" aria-hidden="true">→</div>
+              <div class="bio-path-node">
+                <span>02 · Chemical</span>
+                <strong id="bioChemical">—</strong>
+                <small id="bioChemicalClass"></small>
               </div>
-              <div class="path-connector" aria-hidden="true">→</div>
-              <div class="path-step">
-                <span>Exposure route</span>
-                <strong id="pathRoute">—</strong>
+              <div class="bio-path-arrow" aria-hidden="true">→</div>
+              <div class="bio-path-node">
+                <span>03 · Exposure</span>
+                <strong id="bioExposure">—</strong>
               </div>
-              <div class="path-connector" aria-hidden="true">→</div>
-              <div class="path-step">
-                <span>Research focus</span>
-                <strong id="pathSystem">—</strong>
+              <div class="bio-path-arrow" aria-hidden="true">→</div>
+              <div class="bio-path-node">
+                <span>04 · Molecular target</span>
+                <strong id="bioTarget">—</strong>
+                <small id="bioTargetType"></small>
+              </div>
+              <div class="bio-path-arrow" aria-hidden="true">→</div>
+              <div class="bio-path-node">
+                <span>05 · Endocrine system</span>
+                <strong id="bioSystem">—</strong>
               </div>
             </div>
 
-            <div class="pathway-detail">
-              <div>
-                <h3>What this means</h3>
-                <p id="pathSummary">Choose a source on the left to begin.</p>
-              </div>
-              <div>
-                <h3>Important limitation</h3>
-                <p id="pathLimitation">The Atlas distinguishes exposure, biological activity, association, and demonstrated causal effect.</p>
-              </div>
+            <div class="bio-pathway-notes">
+              <section>
+                <h4>Mechanistic interpretation</h4>
+                <p id="bioMechanism"></p>
+              </section>
+              <section>
+                <h4>Critical caveat</h4>
+                <p id="bioCaveat"></p>
+              </section>
             </div>
+
+            <div class="bio-link-row">
+              <button type="button" class="path-link-button" id="bioOpenExposure">Open exposure profile</button>
+              <button type="button" class="path-link-button" id="bioOpenChemical">Open chemical profile</button>
+              <button type="button" class="path-link-button" id="bioOpenSystem">Open endocrine system</button>
+            </div>
+
+            <a id="bioSource" class="source-inline" href="#" target="_blank" rel="noopener noreferrer">Source ↗</a>
           </article>
         </div>
       </div>
     </section>
-
 
 
     <section class="section exposure-section" id="exposure-atlas">
@@ -479,7 +496,7 @@
         <strong>Endocrine Exposure Atlas</strong>
         <p>Evidence-led environmental health education.</p>
       </div>
-      <p>Version 0.4 · Exposure Atlas</p>
+      <p>Version 0.5 · Biological Pathway Explorer</p>
     </div>
   </footer>
 
