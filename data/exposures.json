@@ -1,0 +1,50 @@
+[
+  {
+    "id": "drinking-water-pfas",
+    "title": "Drinking water",
+    "subtitle": "Environmental contamination pathway",
+    "source": "Drinking water",
+    "chemical": "Selected PFAS",
+    "route": "Ingestion",
+    "system": "Multiple endocrine and physiological endpoints under study",
+    "evidenceLabel": "Compound-specific",
+    "summary": "PFAS are a large chemical class. Some members are persistent and can be present in contaminated water. Research evaluates exposure levels, toxicokinetics, molecular activity, and health outcomes for specific PFAS rather than treating the entire class as identical.",
+    "limitation": "The presence of a PFAS does not by itself establish a health effect at a particular dose. Risk depends on the specific compound, concentration, duration, susceptibility, and strength of the evidence."
+  },
+  {
+    "id": "textiles-pfas",
+    "title": "Water-resistant textiles",
+    "subtitle": "Product-use and environmental pathway",
+    "source": "Treated textile",
+    "chemical": "PFAS-related treatments may be used in some products",
+    "route": "Product contact + indirect environmental exposure",
+    "system": "Exposure characterization and compound-specific toxicology",
+    "evidenceLabel": "Context-dependent",
+    "summary": "Some PFAS have been used for stain, oil, or water resistance. The scientifically useful question is which compound or treatment is present, whether meaningful exposure occurs, and what evidence exists for that specific exposure scenario.",
+    "limitation": "A product category is not proof that a particular item contains PFAS, and product contact does not automatically imply biologically significant internal exposure."
+  },
+  {
+    "id": "food-contact",
+    "title": "Food contact materials",
+    "subtitle": "Packaging and processing context",
+    "source": "Food-contact material",
+    "chemical": "PFAS, bisphenols, or phthalates depending on material and use",
+    "route": "Potential migration followed by ingestion",
+    "system": "Compound-specific endocrine and toxicological endpoints",
+    "evidenceLabel": "Material-specific",
+    "summary": "Food-contact exposure depends on the material, chemical, use conditions, and migration into food. U.S. FDA reports that PFAS grease-proofing agents for paper and paperboard food packaging were phased out of the U.S. market.",
+    "limitation": "Historical uses, current authorized uses, contaminants, and different chemical classes must be distinguished. Detection alone does not quantify dose or health risk."
+  },
+  {
+    "id": "cookware",
+    "title": "Cookware",
+    "subtitle": "Material and use-condition pathway",
+    "source": "Cooking surface or food-processing contact",
+    "chemical": "Material-dependent",
+    "route": "Potential food transfer / ingestion",
+    "system": "Exposure and toxicology depend on the actual material",
+    "evidenceLabel": "Material-specific",
+    "summary": "Cookware should be evaluated by material, coating chemistry, condition, temperature, and realistic migration data. A broad label such as 'nonstick' is not a sufficient toxicological description.",
+    "limitation": "Risk cannot be inferred from a product category alone. The relevant questions are composition, degradation, migration, dose, and evidence for the specific substance."
+  }
+]
