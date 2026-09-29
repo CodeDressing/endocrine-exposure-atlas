@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Endocrine Exposure Atlas — an evidence-led educational resource about endocrine-active chemicals, exposure pathways, biological mechanisms, and research quality.">
+  <title>Endocrine Exposure Atlas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Endocrine Exposure Atlas home">
+        <span class="brand-mark" aria-hidden="true">EA</span>
+        <span>
+          <strong>Endocrine Exposure Atlas</strong>
+          <small>Evidence-led environmental health education</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#explorer">Explorer</a>
+        <a href="#chemicals">Chemical Atlas</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#about">Mission</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">FROM EVERYDAY EXPOSURE TO BIOLOGICAL MECHANISM</p>
+          <h1>See the pathway.<br><span>Read the evidence.</span></h1>
+          <p class="lede">
+            Explore how selected environmental chemicals can move from products and surroundings
+            into exposure pathways, interact with biological systems, and become subjects of
+            human, animal, and mechanistic research.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#explorer">Explore a pathway</a>
+            <a class="button secondary" href="#evidence">How evidence is graded</a>
+          </div>
+          <p class="scope-note">
+            Educational resource — not medical advice. Chemical classes are not treated as biologically identical;
+            evidence is presented with uncertainty and limitations.
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="Exposure pathway overview">
+          <div class="flow-node">
+            <span class="node-kicker">01</span>
+            <strong>Everyday source</strong>
+            <small>Water · textiles · food contact · consumer products</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node">
+            <span class="node-kicker">02</span>
+            <strong>Chemical class</strong>
+            <small>PFAS · bisphenols · phthalates · PCBs · pesticides</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node">
+            <span class="node-kicker">03</span>
+            <strong>Biological interaction</strong>
+            <small>Receptors · synthesis · transport · metabolism · signaling</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-node">
+            <span class="node-kicker">04</span>
+            <strong>Evidence</strong>
+            <small>Human · animal · mechanistic · regulatory assessment</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="explorer">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">INTERACTIVE PATHWAY EXPLORER</p>
+            <h2>Start with an everyday exposure context.</h2>
+          </div>
+          <p>Select a source to trace a simplified, evidence-aware route through the Atlas.</p>
+        </div>
+
+        <div class="explorer-grid">
+          <div class="source-picker" id="sourcePicker" role="list" aria-label="Exposure contexts"></div>
+
+          <article class="pathway-panel" aria-live="polite">
+            <div class="pathway-title">
+              <div>
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="pathwayContext">Select an exposure context</span>
+              </div>
+              <span class="evidence-badge" id="pathwayEvidence">—</span>
+            </div>
+
+            <div class="pathway-track">
+              <div class="path-step">
+                <span>Source</span>
+                <strong id="pathSource">—</strong>
+              </div>
+              <div class="path-connector" aria-hidden="true">→</div>
+              <div class="path-step">
+                <span>Chemical / class</span>
+                <strong id="pathChemical">—</strong>
+              </div>
+              <div class="path-connector" aria-hidden="true">→</div>
+              <div class="path-step">
+                <span>Exposure route</span>
+                <strong id="pathRoute">—</strong>
+              </div>
+              <div class="path-connector" aria-hidden="true">→</div>
+              <div class="path-step">
+                <span>Research focus</span>
+                <strong id="pathSystem">—</strong>
+              </div>
+            </div>
+
+            <div class="pathway-detail">
+              <div>
+                <h3>What this means</h3>
+                <p id="pathSummary">Choose a source on the left to begin.</p>
+              </div>
+              <div>
+                <h3>Important limitation</h3>
+                <p id="pathLimitation">The Atlas distinguishes exposure, biological activity, association, and demonstrated causal effect.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="chemicals">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CHEMICAL ATLAS</p>
+            <h2>Structured knowledge objects, not scare labels.</h2>
+          </div>
+          <p>Each class will expand into compounds, uses, exposure routes, molecular targets, endocrine systems, study types, and citations.</p>
+        </div>
+
+        <div class="chemical-grid" id="chemicalGrid" aria-live="polite">
+          <p class="loading">Loading Atlas data…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="shell evidence-layout">
+        <div>
+          <p class="eyebrow">EVIDENCE STANDARD</p>
+          <h2>Every claim should show what kind of evidence supports it.</h2>
+          <p class="lede compact">
+            A laboratory mechanism, an animal finding, a human association, and a replicated causal result
+            are not interchangeable. The Atlas keeps those categories visible.
+          </p>
+        </div>
+
+        <div class="evidence-scale" id="evidenceScale">
+          <div class="evidence-row">
+            <span class="grade grade-1">A</span>
+            <div><strong>Established / high confidence</strong><small>Converging high-quality evidence or authoritative assessment for the specific claim.</small></div>
+          </div>
+          <div class="evidence-row">
+            <span class="grade grade-2">B</span>
+            <div><strong>Moderate evidence</strong><small>Meaningful evidence with remaining uncertainty, limitations, or incomplete replication.</small></div>
+          </div>
+          <div class="evidence-row">
+            <span class="grade grade-3">C</span>
+            <div><strong>Emerging / limited evidence</strong><small>Early human, animal, or mechanistic evidence that does not justify a strong conclusion.</small></div>
+          </div>
+          <div class="evidence-row">
+            <span class="grade grade-4">?</span>
+            <div><strong>Uncertain / unresolved</strong><small>Insufficient, inconsistent, compound-specific, or context-dependent evidence.</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+      <div class="shell mission-grid">
+        <div>
+          <p class="eyebrow">MISSION</p>
+          <h2>Help students and families understand exposure science without oversimplifying it.</h2>
+        </div>
+        <div class="mission-copy">
+          <p>
+            The Endocrine Exposure Atlas is being built as a public educational project that connects
+            everyday exposure questions with endocrine biology and the quality of the underlying evidence.
+          </p>
+          <p>
+            The goal is not to label every chemical as dangerous. It is to make the chain from
+            <strong>source → exposure → mechanism → evidence → uncertainty</strong> understandable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources">
+      <div class="shell">
+        <p class="eyebrow">FOUNDATIONAL SOURCES</p>
+        <div class="source-links">
+          <a href="https://www.niehs.nih.gov/health/topics/agents/endocrine" target="_blank" rel="noopener noreferrer">NIEHS — Endocrine Disruptors ↗</a>
+          <a href="https://www.epa.gov/pfas/pfas-explained" target="_blank" rel="noopener noreferrer">U.S. EPA — PFAS Explained ↗</a>
+          <a href="https://www.fda.gov/food/environmental-contaminants-food/and-polyfluoroalkyl-substances-pfas" target="_blank" rel="noopener noreferrer">FDA — PFAS in Food ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-wrap">
+      <div>
+        <strong>Endocrine Exposure Atlas</strong>
+        <p>Evidence-led environmental health education.</p>
+      </div>
+      <p>Version 0.1 · Architecture foundation</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
