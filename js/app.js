@@ -7,7 +7,11 @@ const state = {
   feedbackSystems: [],
   compounds: [],
   pathways: [],
-  activePathway: null
+  activePathway: null,
+  evidenceMeta: null,
+  evidenceRecords: [],
+  activeEvidenceType: "all",
+  activeEvidenceRecord: null
 };
 
 const els = {
@@ -100,7 +104,25 @@ const els = {
   feedbackSelect: document.querySelector("#feedbackSelect"),
   feedbackName: document.querySelector("#feedbackName"),
   feedbackDescription: document.querySelector("#feedbackDescription"),
-  feedbackSequence: document.querySelector("#feedbackSequence")
+  feedbackSequence: document.querySelector("#feedbackSequence"),
+  evidencePrinciple: document.querySelector("#evidencePrinciple"),
+  evidenceTypeTabs: document.querySelector("#evidenceTypeTabs"),
+  evidenceChemicalFilter: document.querySelector("#evidenceChemicalFilter"),
+  evidenceGradeFilter: document.querySelector("#evidenceGradeFilter"),
+  evidenceRecordList: document.querySelector("#evidenceRecordList"),
+  evidenceScale: document.querySelector("#evidenceScale"),
+  evidenceRecordChemical: document.querySelector("#evidenceRecordChemical"),
+  evidenceRecordGrade: document.querySelector("#evidenceRecordGrade"),
+  evidenceRecordClaim: document.querySelector("#evidenceRecordClaim"),
+  evidenceRecordType: document.querySelector("#evidenceRecordType"),
+  evidenceRecordStudy: document.querySelector("#evidenceRecordStudy"),
+  evidenceRecordPopulation: document.querySelector("#evidenceRecordPopulation"),
+  evidenceRecordReplication: document.querySelector("#evidenceRecordReplication"),
+  evidenceRecordReviewer: document.querySelector("#evidenceRecordReviewer"),
+  evidenceRecordFinding: document.querySelector("#evidenceRecordFinding"),
+  evidenceRecordLimitations: document.querySelector("#evidenceRecordLimitations"),
+  evidencePathwayLinks: document.querySelector("#evidencePathwayLinks"),
+  evidenceRecordSource: document.querySelector("#evidenceRecordSource")
 };
 
 async function loadJson(path) {
@@ -109,6 +131,134 @@ async function loadJson(path) {
   return response.json();
 }
 
+
+
+function evidenceTypeLabel(typeId) {
+  const type = state.evidenceMeta?.evidence_types?.find(item => item.id === typeId);
+  return type?.label || typeId;
+}
+
+function renderEvidenceEngine() {
+  if (!state.evidenceMeta) return;
+
+  els.evidencePrinciple.textContent = state.evidenceMeta.principle;
+
+  const tabs = [{id: "all", label: "All evidence"}, ...state.evidenceMeta.evidence_types];
+  els.evidenceTypeTabs.innerHTML = tabs.map((item, index) => `
+    <button type="button" class="evidence-type-button" role="tab"
+      aria-selected="${index === 0 ? "true" : "false"}" data-evidence-type="${item.id}">
+      ${item.label}
+    </button>
+  `).join("");
+
+  els.evidenceTypeTabs.querySelectorAll(".evidence-type-button").forEach(button => {
+    button.addEventListener("click", () => {
+      state.activeEvidenceType = button.dataset.evidenceType;
+      els.evidenceTypeTabs.querySelectorAll(".evidence-type-button").forEach(b => b.setAttribute("aria-selected", "false"));
+      button.setAttribute("aria-selected", "true");
+      renderEvidenceRecords();
+    });
+  });
+
+  const chemicals = [...new Set(state.evidenceRecords.map(record => record.chemical))].sort();
+  els.evidenceChemicalFilter.innerHTML = '<option value="all">All chemicals</option>' +
+    chemicals.map(value => `<option value="${value}">${value}</option>`).join("");
+
+  els.evidenceGradeFilter.innerHTML = '<option value="all">All grades</option>' +
+    state.evidenceMeta.classes.map(item => `<option value="${item.grade}">Grade ${item.grade} — ${item.label}</option>`).join("");
+
+  els.evidenceChemicalFilter.addEventListener("change", renderEvidenceRecords);
+  els.evidenceGradeFilter.addEventListener("change", renderEvidenceRecords);
+
+  els.evidenceScale.innerHTML = state.evidenceMeta.classes.map((item, index) => `
+    <div class="evidence-row">
+      <span class="grade grade-${Math.min(index + 1, 4)}">${item.grade}</span>
+      <div><strong>${item.label}</strong><small>${item.definition}</small></div>
+    </div>
+  `).join("");
+
+  renderEvidenceRecords();
+}
+
+function filteredEvidenceRecords() {
+  const chemical = els.evidenceChemicalFilter.value;
+  const grade = els.evidenceGradeFilter.value;
+  return state.evidenceRecords.filter(record => {
+    const typeMatch = state.activeEvidenceType === "all" || record.evidence_type === state.activeEvidenceType;
+    const chemicalMatch = chemical === "all" || record.chemical === chemical;
+    const gradeMatch = grade === "all" || record.evidence_class === grade;
+    return typeMatch && chemicalMatch && gradeMatch;
+  });
+}
+
+function renderEvidenceRecords() {
+  const records = filteredEvidenceRecords();
+  if (!records.length) {
+    els.evidenceRecordList.innerHTML = '<p class="error-message">No evidence records match these filters.</p>';
+    state.activeEvidenceRecord = null;
+    return;
+  }
+
+  els.evidenceRecordList.innerHTML = records.map((record, index) => `
+    <button type="button" class="evidence-record-button" data-evidence-id="${record.id}" aria-pressed="${index === 0 ? "true" : "false"}">
+      <span class="record-topline">
+        <span class="record-type">${evidenceTypeLabel(record.evidence_type)}</span>
+        <span class="record-grade">Grade ${record.evidence_class}</span>
+      </span>
+      <strong>${record.chemical}</strong>
+      <small>${record.claim}</small>
+    </button>
+  `).join("");
+
+  els.evidenceRecordList.querySelectorAll(".evidence-record-button").forEach(button => {
+    button.addEventListener("click", () => {
+      els.evidenceRecordList.querySelectorAll(".evidence-record-button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      const record = state.evidenceRecords.find(item => item.id === button.dataset.evidenceId);
+      if (record) renderEvidenceRecordDetail(record);
+    });
+  });
+
+  renderEvidenceRecordDetail(records[0]);
+}
+
+function renderEvidenceRecordDetail(record) {
+  state.activeEvidenceRecord = record;
+  els.evidenceRecordChemical.textContent = record.chemical;
+  els.evidenceRecordGrade.textContent = record.evidence_class;
+  els.evidenceRecordGrade.dataset.grade = record.evidence_class;
+  els.evidenceRecordClaim.textContent = record.claim;
+  els.evidenceRecordType.textContent = evidenceTypeLabel(record.evidence_type);
+  els.evidenceRecordStudy.textContent = record.study_type;
+  els.evidenceRecordPopulation.textContent = record.species_or_population;
+  els.evidenceRecordReplication.textContent = record.replication_status;
+  els.evidenceRecordReviewer.textContent = record.reviewer_status;
+  els.evidenceRecordFinding.textContent = record.finding;
+  els.evidenceRecordLimitations.textContent = record.limitations;
+  els.evidenceRecordSource.textContent = `${record.source_label} ↗`;
+  els.evidenceRecordSource.href = record.source_url;
+
+  const pathways = (record.pathway_ids || [])
+    .map(id => state.pathways.find(pathway => pathway.id === id))
+    .filter(Boolean);
+
+  els.evidencePathwayLinks.innerHTML = pathways.length
+    ? pathways.map(pathway => `<button type="button" class="evidence-path-chip" data-pathway-id="${pathway.id}">${pathway.title}</button>`).join("")
+    : '<span>No pathway link assigned</span>';
+
+  els.evidencePathwayLinks.querySelectorAll(".evidence-path-chip").forEach(button => {
+    button.addEventListener("click", () => {
+      const pathway = state.pathways.find(item => item.id === button.dataset.pathwayId);
+      if (!pathway) return;
+      renderBiologicalPathway(pathway);
+      document.querySelectorAll(".pathway-scenario-button").forEach(b => {
+        const matches = b.textContent.includes(pathway.title);
+        b.setAttribute("aria-pressed", matches ? "true" : "false");
+      });
+      document.querySelector("#explorer")?.scrollIntoView({behavior: "smooth", block: "start"});
+    });
+  });
+}
 
 function findChemicalClassForPathway(pathway) {
   return state.chemicals.find(item =>
@@ -416,7 +566,7 @@ function renderFeedback(item) {
 
 async function init() {
   try {
-    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways] = await Promise.all([
+    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways, evidenceMeta, evidenceRecords] = await Promise.all([
       loadJson("data/exposures.json"),
       loadJson("data/chemicals.json"),
       loadJson("data/endocrine-systems.json"),
@@ -424,7 +574,9 @@ async function init() {
       loadJson("data/receptors.json"),
       loadJson("data/feedback-systems.json"),
       loadJson("data/compounds.json"),
-      loadJson("data/pathways.json")
+      loadJson("data/pathways.json"),
+      loadJson("data/evidence.json"),
+      loadJson("data/evidence-records.json")
     ]);
 
     state.exposures = exposures;
@@ -435,8 +587,11 @@ async function init() {
     state.feedbackSystems = feedbackSystems;
     state.compounds = compounds;
     state.pathways = pathways;
+    state.evidenceMeta = evidenceMeta;
+    state.evidenceRecords = evidenceRecords;
 
     renderPathwayScenarios();
+    renderEvidenceEngine();
     setupPathwayDeepLinks();
     renderExposureButtons();
     renderExposureAtlas();
