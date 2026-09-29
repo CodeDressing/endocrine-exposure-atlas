@@ -4,12 +4,30 @@ const state = {
   endocrineSystems: [],
   hormones: [],
   receptors: [],
-  feedbackSystems: []
+  feedbackSystems: [],
+  compounds: []
 };
 
 const els = {
   sourcePicker: document.querySelector("#sourcePicker"),
   chemicalGrid: document.querySelector("#chemicalGrid"),
+  chemicalName: document.querySelector("#chemicalName"),
+  chemicalFullName: document.querySelector("#chemicalFullName"),
+  chemicalStatus: document.querySelector("#chemicalStatus"),
+  chemicalSummary: document.querySelector("#chemicalSummary"),
+  chemicalCompounds: document.querySelector("#chemicalCompounds"),
+  chemicalContexts: document.querySelector("#chemicalContexts"),
+  chemicalRoutes: document.querySelector("#chemicalRoutes"),
+  chemicalSystems: document.querySelector("#chemicalSystems"),
+  chemicalMechanisms: document.querySelector("#chemicalMechanisms"),
+  chemicalEvidence: document.querySelector("#chemicalEvidence"),
+  chemicalUncertainty: document.querySelector("#chemicalUncertainty"),
+  chemicalSource: document.querySelector("#chemicalSource"),
+  compoundSelect: document.querySelector("#compoundSelect"),
+  compoundName: document.querySelector("#compoundName"),
+  compoundFullName: document.querySelector("#compoundFullName"),
+  compoundNote: document.querySelector("#compoundNote"),
+  compoundSystems: document.querySelector("#compoundSystems"),
   pathwayContext: document.querySelector("#pathwayContext"),
   pathwayEvidence: document.querySelector("#pathwayEvidence"),
   pathSource: document.querySelector("#pathSource"),
@@ -91,26 +109,64 @@ function renderPathway(item) {
 
 function renderChemicals() {
   els.chemicalGrid.innerHTML = "";
-
-  state.chemicals.forEach(item => {
-    const card = document.createElement("article");
-    card.className = "chemical-card";
-
-    const tags = item.tags.map(tag => `<span>${tag}</span>`).join("");
-
-    card.innerHTML = `
-      <div class="card-top">
-        <h3>${item.name}</h3>
-        <span class="evidence-badge">${item.status}</span>
-      </div>
-      <p>${item.summary}</p>
-      <div class="meta" aria-label="Research tags">${tags}</div>
-    `;
-
-    els.chemicalGrid.appendChild(card);
+  state.chemicals.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "chemical-class-button";
+    button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+    button.innerHTML = `<strong>${item.name}</strong><small>${item.scope}</small>`;
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".chemical-class-button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      renderChemicalProfile(item);
+    });
+    els.chemicalGrid.appendChild(button);
   });
+  if (state.chemicals[0]) renderChemicalProfile(state.chemicals[0]);
 }
 
+function renderChemicalProfile(item) {
+  els.chemicalName.textContent = item.name;
+  els.chemicalFullName.textContent = item.full_name;
+  els.chemicalStatus.textContent = item.status;
+  els.chemicalSummary.textContent = item.summary;
+  els.chemicalCompounds.innerHTML = chips(item.representative_compounds);
+  els.chemicalContexts.innerHTML = chips(item.common_contexts);
+  els.chemicalRoutes.innerHTML = chips(item.exposure_routes);
+  els.chemicalSystems.innerHTML = chips(item.endocrine_systems);
+  els.chemicalMechanisms.innerHTML = chips(item.mechanistic_domains);
+  els.chemicalEvidence.textContent = item.evidence_summary;
+  els.chemicalUncertainty.textContent = item.key_uncertainty;
+  els.chemicalSource.textContent = `${item.source_label} ↗`;
+  els.chemicalSource.href = item.source_url;
+
+  const matching = state.compounds.filter(compound => compound.class_id === item.id);
+  els.compoundSelect.innerHTML = "";
+  matching.forEach((compound, index) => {
+    const option = document.createElement("option");
+    option.value = String(index);
+    option.textContent = compound.name;
+    els.compoundSelect.appendChild(option);
+  });
+  els.compoundSelect.onchange = () => renderCompound(matching[Number(els.compoundSelect.value)]);
+  if (matching[0]) {
+    renderCompound(matching[0]);
+    els.compoundSelect.disabled = false;
+  } else {
+    els.compoundSelect.disabled = true;
+    els.compoundName.textContent = "No representative compound loaded yet";
+    els.compoundFullName.textContent = "";
+    els.compoundNote.textContent = "This class profile is available, but the compound-level layer is still being expanded.";
+    els.compoundSystems.innerHTML = "";
+  }
+}
+
+function renderCompound(item) {
+  els.compoundName.textContent = item.name;
+  els.compoundFullName.textContent = item.full_name;
+  els.compoundNote.textContent = item.note;
+  els.compoundSystems.innerHTML = chips(item.systems);
+}
 
 function chips(values) {
   return values.map(value => `<span>${value}</span>`).join("");
@@ -192,13 +248,14 @@ function renderFeedback(item) {
 
 async function init() {
   try {
-    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems] = await Promise.all([
+    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds] = await Promise.all([
       loadJson("data/exposures.json"),
       loadJson("data/chemicals.json"),
       loadJson("data/endocrine-systems.json"),
       loadJson("data/hormones.json"),
       loadJson("data/receptors.json"),
-      loadJson("data/feedback-systems.json")
+      loadJson("data/feedback-systems.json"),
+      loadJson("data/compounds.json")
     ]);
 
     state.exposures = exposures;
@@ -207,6 +264,7 @@ async function init() {
     state.hormones = hormones;
     state.receptors = receptors;
     state.feedbackSystems = feedbackSystems;
+    state.compounds = compounds;
 
     renderExposureButtons();
     renderChemicals();
