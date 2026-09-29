@@ -1,0 +1,44 @@
+[
+  {
+    "id": "pfas",
+    "name": "PFAS",
+    "status": "Class of thousands",
+    "summary": "Per- and polyfluoroalkyl substances are a diverse chemical class. Persistence, exposure, toxicokinetics, and biological effects vary by compound; the Atlas will keep those distinctions explicit.",
+    "tags": ["persistence", "water", "food", "textiles"]
+  },
+  {
+    "id": "bisphenols",
+    "name": "Bisphenols",
+    "status": "Compound-specific",
+    "summary": "A family including BPA and related compounds studied for interactions with hormone signaling and for exposure from selected materials and products.",
+    "tags": ["receptors", "food contact", "materials"]
+  },
+  {
+    "id": "phthalates",
+    "name": "Phthalates",
+    "status": "Compound-specific",
+    "summary": "A group of chemicals used in several material and product applications. Exposure patterns and endocrine-related evidence differ substantially among individual phthalates and metabolites.",
+    "tags": ["plasticizers", "personal care", "metabolites"]
+  },
+  {
+    "id": "pcbs",
+    "name": "PCBs",
+    "status": "Legacy pollutants",
+    "summary": "Polychlorinated biphenyls are persistent legacy pollutants. Although U.S. manufacture was banned decades ago, environmental persistence keeps them relevant to exposure science.",
+    "tags": ["legacy", "persistence", "environment"]
+  },
+  {
+    "id": "pesticides",
+    "name": "Selected pesticides",
+    "status": "Not one mechanism",
+    "summary": "Pesticides span many chemical families and modes of action. Endocrine activity must be evaluated substance by substance rather than generalized to every pesticide.",
+    "tags": ["agriculture", "mechanisms", "regulation"]
+  },
+  {
+    "id": "flame-retardants",
+    "name": "Flame retardants",
+    "status": "Multiple classes",
+    "summary": "Flame retardants comprise several chemical classes with different uses, persistence profiles, exposure routes, and biological evidence.",
+    "tags": ["indoor environment", "materials", "dust"]
+  }
+]
