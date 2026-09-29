@@ -1,0 +1,262 @@
+[
+  {
+    "id": "bpa-human-endocrine",
+    "pathway_ids": [
+      "polycarbonate-bpa-er"
+    ],
+    "chemical": "BPA",
+    "claim": "Human studies have examined associations between BPA exposure biomarkers and reproductive, developmental, metabolic, and other endocrine-related outcomes.",
+    "evidence_type": "human",
+    "evidence_class": "C",
+    "study_type": "Observational epidemiology / biomonitoring",
+    "species_or_population": "Humans",
+    "finding": "Human observational literature is extensive but heterogeneous across exposure measurement, timing, endpoints, and study design.",
+    "limitations": "Cross-sectional designs, short-lived urinary biomarkers, confounding, reverse causation, and inconsistent endpoints can limit causal interpretation.",
+    "replication_status": "Mixed by endpoint",
+    "reviewer_status": "Atlas summary — primary-study curation pending",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "bpa-mechanistic-er",
+    "pathway_ids": [
+      "polycarbonate-bpa-er"
+    ],
+    "chemical": "BPA",
+    "claim": "BPA can interact with estrogen-signaling pathways in experimental systems.",
+    "evidence_type": "mechanistic",
+    "evidence_class": "B",
+    "study_type": "Receptor / cellular / molecular studies",
+    "species_or_population": "In vitro systems and experimental models",
+    "finding": "Mechanistic evidence supports estrogen-receptor and related signaling activity for BPA.",
+    "limitations": "Mechanistic activity does not define the dose-response or health consequence of a particular real-world exposure.",
+    "replication_status": "Replicated mechanistic domain",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "dehp-animal-repro",
+    "pathway_ids": [
+      "vinyl-dehp-steroidogenesis"
+    ],
+    "chemical": "DEHP",
+    "claim": "Controlled animal studies support reproductive and developmental toxicity for DEHP and related metabolites at sufficient exposures.",
+    "evidence_type": "animal",
+    "evidence_class": "B",
+    "study_type": "Controlled in vivo toxicology",
+    "species_or_population": "Laboratory animals",
+    "finding": "Experimental literature supports effects on androgen-dependent development, steroidogenesis, and reproductive endpoints.",
+    "limitations": "Species, dose, developmental window, route, and metabolism affect extrapolation to human exposure.",
+    "replication_status": "Replicated experimental domain",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "dehp-human-repro",
+    "pathway_ids": [
+      "vinyl-dehp-steroidogenesis"
+    ],
+    "chemical": "DEHP / phthalate metabolites",
+    "claim": "Human biomonitoring studies have evaluated phthalate metabolites in relation to reproductive and developmental endpoints.",
+    "evidence_type": "human",
+    "evidence_class": "C",
+    "study_type": "Observational epidemiology / biomonitoring",
+    "species_or_population": "Humans",
+    "finding": "Associations have been reported for selected reproductive and developmental endpoints, but findings vary across compounds and cohorts.",
+    "limitations": "Mixtures, correlated exposures, metabolite measurement timing, confounding, and multiple comparisons complicate interpretation.",
+    "replication_status": "Variable by endpoint",
+    "reviewer_status": "Atlas summary — primary-study curation pending",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "pfoa-human-thyroid-metabolic",
+    "pathway_ids": [
+      "water-pfoa-ppar",
+      "textile-pfas-thyroid"
+    ],
+    "chemical": "PFOA / selected PFAS",
+    "claim": "Human studies have reported associations between selected PFAS exposures and thyroid, lipid, reproductive, developmental, immune, and other outcomes.",
+    "evidence_type": "human",
+    "evidence_class": "B",
+    "study_type": "Epidemiology / biomonitoring",
+    "species_or_population": "Humans",
+    "finding": "EPA identifies several health-effect domains associated with exposure to certain PFAS, while noting large differences in the evidence base across compounds.",
+    "limitations": "PFAS mixtures, long half-lives, co-exposures, differing study populations, and compound-specific effects complicate causal attribution.",
+    "replication_status": "Varies by PFAS and endpoint",
+    "reviewer_status": "Authoritative synthesis",
+    "source_label": "U.S. EPA — Current Understanding of PFAS Risks",
+    "source_url": "https://www.epa.gov/pfas/our-current-understanding-human-health-and-environmental-risks-pfas"
+  },
+  {
+    "id": "pfoa-mechanistic",
+    "pathway_ids": [
+      "water-pfoa-ppar"
+    ],
+    "chemical": "PFOA",
+    "claim": "PFOA has mechanistic evidence involving lipid-regulatory and nuclear-receptor pathways, including PPARα-linked biology.",
+    "evidence_type": "mechanistic",
+    "evidence_class": "B",
+    "study_type": "Molecular / receptor / systems toxicology",
+    "species_or_population": "Experimental systems",
+    "finding": "Mechanistic studies support effects on lipid-regulatory signaling and other molecular pathways.",
+    "limitations": "Relative importance of individual mechanisms can differ between species and exposure conditions.",
+    "replication_status": "Replicated mechanistic domain",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "U.S. EPA — PFAS Human Health Risks",
+    "source_url": "https://www.epa.gov/pfas/our-current-understanding-human-health-and-environmental-risks-pfas"
+  },
+  {
+    "id": "dde-mechanistic-ar",
+    "pathway_ids": [
+      "dde-ar"
+    ],
+    "chemical": "p,p′-DDE",
+    "claim": "p,p′-DDE can antagonize androgen-receptor signaling in experimental systems.",
+    "evidence_type": "mechanistic",
+    "evidence_class": "A",
+    "study_type": "Receptor / molecular toxicology",
+    "species_or_population": "Experimental systems",
+    "finding": "Antiandrogenic activity is a well-established mechanistic property used to explain reproductive-developmental effects in toxicology.",
+    "limitations": "A known receptor mechanism does not establish the magnitude of effect at any particular environmental concentration.",
+    "replication_status": "Well replicated",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "dde-human-repro",
+    "pathway_ids": [
+      "dde-ar"
+    ],
+    "chemical": "DDE / DDT-related compounds",
+    "claim": "Human epidemiology has examined legacy DDT/DDE exposure in relation to reproductive and developmental outcomes.",
+    "evidence_type": "human",
+    "evidence_class": "C",
+    "study_type": "Observational epidemiology",
+    "species_or_population": "Humans",
+    "finding": "Outcome-specific associations have been reported, but strength and consistency vary.",
+    "limitations": "Historical exposure reconstruction, mixtures, long latency, residual confounding, and endpoint heterogeneity limit causal precision.",
+    "replication_status": "Mixed by endpoint",
+    "reviewer_status": "Atlas summary — primary-study curation pending",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "pbde-animal-thyroid",
+    "pathway_ids": [
+      "foam-bde47-thyroid"
+    ],
+    "chemical": "PBDEs / BDE-47",
+    "claim": "Animal studies support disruption of thyroid-hormone homeostasis by selected PBDEs.",
+    "evidence_type": "animal",
+    "evidence_class": "B",
+    "study_type": "Controlled in vivo toxicology",
+    "species_or_population": "Laboratory animals",
+    "finding": "Experimental exposure can alter thyroid-hormone measures and developmental endpoints for selected PBDEs.",
+    "limitations": "Congener, dose, species, developmental timing, and background iodine/thyroid status affect interpretation.",
+    "replication_status": "Replicated experimental domain",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "NIEHS — Flame Retardants",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/flame_retardants"
+  },
+  {
+    "id": "pbde-mechanistic-thyroid",
+    "pathway_ids": [
+      "foam-bde47-thyroid"
+    ],
+    "chemical": "PBDEs / metabolites",
+    "claim": "PBDEs and metabolites have mechanistic evidence involving thyroid-hormone transport, metabolism, and receptor-related pathways.",
+    "evidence_type": "mechanistic",
+    "evidence_class": "B",
+    "study_type": "Biochemical / receptor / transport studies",
+    "species_or_population": "Experimental systems",
+    "finding": "Multiple mechanisms can perturb thyroid-hormone homeostasis rather than a single receptor-only mechanism.",
+    "limitations": "Different PBDE congeners and metabolites have different potency and pathway profiles.",
+    "replication_status": "Multiple supported mechanisms",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "NIEHS — Flame Retardants",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/flame_retardants"
+  },
+  {
+    "id": "pcb-human-thyroid",
+    "pathway_ids": [
+      "building-pcb153-thyroid"
+    ],
+    "chemical": "PCBs",
+    "claim": "Human studies suggest associations between PCB exposure and altered thyroid-hormone measures.",
+    "evidence_type": "human",
+    "evidence_class": "B",
+    "study_type": "Epidemiology / biomonitoring",
+    "species_or_population": "Humans",
+    "finding": "EPA notes human evidence suggesting changes in thyroid-hormone levels in relation to PCB exposure.",
+    "limitations": "Congener mixtures, exposure history, co-contaminants, and varying thyroid measures complicate interpretation.",
+    "replication_status": "Evidence exists; endpoint consistency varies",
+    "reviewer_status": "Authoritative synthesis",
+    "source_label": "U.S. EPA — Health Effects of PCBs",
+    "source_url": "https://www.epa.gov/pcbs/health-effects-pcbs"
+  },
+  {
+    "id": "pcb-animal-endocrine",
+    "pathway_ids": [
+      "building-pcb153-thyroid"
+    ],
+    "chemical": "PCBs",
+    "claim": "Animal studies demonstrate endocrine effects of PCB exposure.",
+    "evidence_type": "animal",
+    "evidence_class": "B",
+    "study_type": "Controlled in vivo toxicology",
+    "species_or_population": "Laboratory animals",
+    "finding": "EPA reports endocrine effects in animals, including thyroid-related effects.",
+    "limitations": "Commercial mixtures and individual congeners differ in mechanism and potency; species extrapolation remains necessary.",
+    "replication_status": "Established experimental domain",
+    "reviewer_status": "Authoritative synthesis",
+    "source_label": "U.S. EPA — Health Effects of PCBs",
+    "source_url": "https://www.epa.gov/pcbs/health-effects-pcbs"
+  },
+  {
+    "id": "dbp-animal-androgen",
+    "pathway_ids": [
+      "personalcare-dbp-steroid"
+    ],
+    "chemical": "DBP",
+    "claim": "Animal studies support developmental antiandrogenic and steroidogenesis-related effects of DBP at sufficient exposures.",
+    "evidence_type": "animal",
+    "evidence_class": "B",
+    "study_type": "Controlled developmental toxicology",
+    "species_or_population": "Laboratory animals",
+    "finding": "Experimental evidence supports disruption of androgen-dependent reproductive development.",
+    "limitations": "Dose, developmental window, species metabolism, and route matter for extrapolation to human product use.",
+    "replication_status": "Replicated experimental domain",
+    "reviewer_status": "Atlas-reviewed summary",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "edc-synthesis",
+    "pathway_ids": [
+      "polycarbonate-bpa-er",
+      "vinyl-dehp-steroidogenesis",
+      "water-pfoa-ppar",
+      "textile-pfas-thyroid",
+      "dde-ar",
+      "foam-bde47-thyroid",
+      "building-pcb153-thyroid",
+      "personalcare-dbp-steroid"
+    ],
+    "chemical": "Multiple endocrine-active chemicals",
+    "claim": "Endocrine-disruption assessment requires integrating exposure, molecular mechanism, animal evidence, human evidence, dose, timing, and susceptibility.",
+    "evidence_type": "synthesis",
+    "evidence_class": "A",
+    "study_type": "Authoritative scientific synthesis",
+    "species_or_population": "Cross-evidence integration",
+    "finding": "Mechanistic activity, animal effects, and human associations answer different questions and should not be collapsed into a single unsupported causal statement.",
+    "limitations": "Confidence remains claim-specific; a strong mechanism can coexist with uncertain population-level health effects.",
+    "replication_status": "Foundational assessment principle",
+    "reviewer_status": "Authoritative synthesis",
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  }
+]
