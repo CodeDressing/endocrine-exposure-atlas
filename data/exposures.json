@@ -1,50 +1,316 @@
 [
   {
-    "id": "drinking-water-pfas",
+    "id": "food",
+    "title": "Food & food-contact materials",
+    "subtitle": "Diet, packaging, processing and storage",
+    "source": "Food, packaging and food-contact surfaces",
+    "chemical": "PFAS, bisphenols, phthalates, pesticides, PCBs — depending on source",
+    "route": "Primarily ingestion",
+    "system": "Compound-specific endocrine and toxicological endpoints",
+    "evidenceLabel": "Source-specific",
+    "summary": "Food exposure can reflect environmental contamination, agricultural residues, processing, packaging, storage, or migration from food-contact materials. The relevant chemical, concentration and use conditions must be identified before drawing conclusions.",
+    "limitation": "A food or package category does not prove the presence of a specific endocrine-active chemical, and detection alone does not establish harmful dose.",
+    "icon": "FOOD",
+    "chemical_classes": [
+      "PFAS",
+      "Bisphenols",
+      "Phthalates",
+      "Selected pesticides",
+      "PCBs"
+    ],
+    "example_contexts": [
+      "Food packaging",
+      "Canned-food linings",
+      "Agricultural residues",
+      "Fatty foods that bioaccumulate persistent pollutants",
+      "Food-processing equipment"
+    ],
+    "exposure_routes": [
+      "Ingestion"
+    ],
+    "exposure_drivers": [
+      "Chemical concentration",
+      "Migration into food",
+      "Food type",
+      "Temperature and contact time",
+      "Consumption frequency"
+    ],
+    "practical_questions": [
+      "What material is touching the food?",
+      "Is the concern migration, residue, or environmental contamination?",
+      "Which specific compound was measured?",
+      "At what concentration and under what use conditions?"
+    ],
+    "source_label": "FDA — Environmental Contaminants in Food",
+    "source_url": "https://www.fda.gov/food/chemical-contaminants-pesticides/environmental-contaminants-food"
+  },
+  {
+    "id": "water",
     "title": "Drinking water",
-    "subtitle": "Environmental contamination pathway",
-    "source": "Drinking water",
-    "chemical": "Selected PFAS",
+    "subtitle": "Source water, treatment and distribution",
+    "source": "Public water, private wells and contaminated source water",
+    "chemical": "Selected PFAS and other contaminants depending on location",
     "route": "Ingestion",
     "system": "Multiple endocrine and physiological endpoints under study",
     "evidenceLabel": "Compound-specific",
-    "summary": "PFAS are a large chemical class. Some members are persistent and can be present in contaminated water. Research evaluates exposure levels, toxicokinetics, molecular activity, and health outcomes for specific PFAS rather than treating the entire class as identical.",
-    "limitation": "The presence of a PFAS does not by itself establish a health effect at a particular dose. Risk depends on the specific compound, concentration, duration, susceptibility, and strength of the evidence."
-  },
-  {
-    "id": "textiles-pfas",
-    "title": "Water-resistant textiles",
-    "subtitle": "Product-use and environmental pathway",
-    "source": "Treated textile",
-    "chemical": "PFAS-related treatments may be used in some products",
-    "route": "Product contact + indirect environmental exposure",
-    "system": "Exposure characterization and compound-specific toxicology",
-    "evidenceLabel": "Context-dependent",
-    "summary": "Some PFAS have been used for stain, oil, or water resistance. The scientifically useful question is which compound or treatment is present, whether meaningful exposure occurs, and what evidence exists for that specific exposure scenario.",
-    "limitation": "A product category is not proof that a particular item contains PFAS, and product contact does not automatically imply biologically significant internal exposure."
-  },
-  {
-    "id": "food-contact",
-    "title": "Food contact materials",
-    "subtitle": "Packaging and processing context",
-    "source": "Food-contact material",
-    "chemical": "PFAS, bisphenols, or phthalates depending on material and use",
-    "route": "Potential migration followed by ingestion",
-    "system": "Compound-specific endocrine and toxicological endpoints",
-    "evidenceLabel": "Material-specific",
-    "summary": "Food-contact exposure depends on the material, chemical, use conditions, and migration into food. U.S. FDA reports that PFAS grease-proofing agents for paper and paperboard food packaging were phased out of the U.S. market.",
-    "limitation": "Historical uses, current authorized uses, contaminants, and different chemical classes must be distinguished. Detection alone does not quantify dose or health risk."
+    "summary": "Drinking-water exposure depends on local contamination, treatment, source-water conditions and the specific chemical measured. PFAS are a prominent example because some are persistent and mobile in water.",
+    "limitation": "Water risk is concentration- and compound-specific. The presence of a contaminant is not the same as a demonstrated health effect at that measured level.",
+    "icon": "H2O",
+    "chemical_classes": [
+      "PFAS",
+      "Pesticides",
+      "Legacy industrial contaminants"
+    ],
+    "example_contexts": [
+      "Municipal drinking water",
+      "Private wells",
+      "Groundwater near contaminated sites",
+      "Surface-water sources"
+    ],
+    "exposure_routes": [
+      "Ingestion",
+      "Incidental ingestion during food preparation"
+    ],
+    "exposure_drivers": [
+      "Local concentration",
+      "Daily water intake",
+      "Duration of exposure",
+      "Treatment technology",
+      "Compound persistence"
+    ],
+    "practical_questions": [
+      "Was the water actually tested?",
+      "Which compound was measured?",
+      "What is the concentration?",
+      "Is an applicable regulatory or health-based benchmark available?"
+    ],
+    "source_label": "U.S. EPA — PFAS in Drinking Water",
+    "source_url": "https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas"
   },
   {
     "id": "cookware",
     "title": "Cookware",
-    "subtitle": "Material and use-condition pathway",
-    "source": "Cooking surface or food-processing contact",
+    "subtitle": "Surface chemistry, coatings and heating conditions",
+    "source": "Cooking surfaces, coatings and food-contact materials",
     "chemical": "Material-dependent",
-    "route": "Potential food transfer / ingestion",
-    "system": "Exposure and toxicology depend on the actual material",
+    "route": "Potential transfer to food followed by ingestion; some degradation products may be inhaled under extreme conditions",
+    "system": "Depends on the actual material and compound",
     "evidenceLabel": "Material-specific",
-    "summary": "Cookware should be evaluated by material, coating chemistry, condition, temperature, and realistic migration data. A broad label such as 'nonstick' is not a sufficient toxicological description.",
-    "limitation": "Risk cannot be inferred from a product category alone. The relevant questions are composition, degradation, migration, dose, and evidence for the specific substance."
+    "summary": "Cookware should be evaluated by its material, coating chemistry, physical condition, heating temperature and realistic migration or degradation data. 'Nonstick' is a product property, not a toxicological identity.",
+    "limitation": "It is inaccurate to treat all cookware or all fluorinated chemistry as equivalent. Polymer coatings, processing aids and small-molecule PFAS are different exposure questions.",
+    "icon": "PAN",
+    "chemical_classes": [
+      "PFAS-related chemistry in some manufacturing contexts",
+      "Metals",
+      "Other coating constituents"
+    ],
+    "example_contexts": [
+      "Nonstick pans",
+      "Ceramic-coated cookware",
+      "Stainless steel",
+      "Cast iron",
+      "Food-processing surfaces"
+    ],
+    "exposure_routes": [
+      "Ingestion from migration or wear",
+      "Inhalation if materials are severely overheated"
+    ],
+    "exposure_drivers": [
+      "Coating composition",
+      "Surface damage",
+      "Temperature",
+      "Food acidity",
+      "Contact duration"
+    ],
+    "practical_questions": [
+      "What is the cooking surface made of?",
+      "Is the coating intact?",
+      "What temperatures are being used?",
+      "Is there migration data for the specific material?"
+    ],
+    "source_label": "FDA — Food Contact Substances",
+    "source_url": "https://www.fda.gov/food/packaging-food-contact-substances-fcs/food-contact-substances"
+  },
+  {
+    "id": "clothing",
+    "title": "Clothing & textiles",
+    "subtitle": "Fabric treatments, finishes and indoor transfer",
+    "source": "Apparel, upholstery, carpets and treated textiles",
+    "chemical": "PFAS, flame retardants, phthalates or other additives depending on product",
+    "route": "Dermal contact, inhalation or ingestion of transferred dust; indirect environmental exposure",
+    "system": "Compound-specific endocrine and toxicological endpoints",
+    "evidenceLabel": "Product-specific",
+    "summary": "Textiles can contain finishes or additives for stain, water, oil or flame resistance. Exposure depends on the actual treatment, chemical release and contact scenario rather than the textile category alone.",
+    "limitation": "A label such as 'water resistant' or 'flame resistant' does not identify the chemical formulation. Product-specific composition matters.",
+    "icon": "TEXTILE",
+    "chemical_classes": [
+      "PFAS",
+      "Flame retardants",
+      "Phthalates"
+    ],
+    "example_contexts": [
+      "Water-resistant outerwear",
+      "Stain-resistant upholstery",
+      "Carpets",
+      "Uniforms",
+      "Treated furnishings"
+    ],
+    "exposure_routes": [
+      "Dermal contact",
+      "Dust ingestion",
+      "Inhalation",
+      "Indirect environmental exposure"
+    ],
+    "exposure_drivers": [
+      "Treatment chemistry",
+      "Abrasion",
+      "Washing",
+      "Indoor dust transfer",
+      "Frequency and duration of contact"
+    ],
+    "practical_questions": [
+      "Is the product chemically treated?",
+      "Does the manufacturer disclose the finish?",
+      "Is exposure likely to be dermal, via dust, or mainly environmental?",
+      "Is the chemical class known?"
+    ],
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "plastics",
+    "title": "Plastics",
+    "subtitle": "Polymer type, additives and use conditions",
+    "source": "Plastic containers, vinyl, household goods and material additives",
+    "chemical": "Bisphenols, phthalates and other additives depending on polymer and formulation",
+    "route": "Ingestion, dermal contact, inhalation or dust ingestion",
+    "system": "Reproductive, metabolic and other endocrine pathways depending on compound",
+    "evidenceLabel": "Polymer/additive-specific",
+    "summary": "Plastic is not one chemical. Exposure questions usually concern monomers, plasticizers, stabilizers, colorants or other additives, and whether they migrate or are released under actual use conditions.",
+    "limitation": "A recycling code or the word 'plastic' cannot by itself establish endocrine activity, exposure magnitude or health risk.",
+    "icon": "PLASTIC",
+    "chemical_classes": [
+      "Bisphenols",
+      "Phthalates",
+      "Flame retardants in selected products"
+    ],
+    "example_contexts": [
+      "Polycarbonate products",
+      "Flexible PVC",
+      "Food-storage containers",
+      "Vinyl flooring",
+      "Children's products"
+    ],
+    "exposure_routes": [
+      "Ingestion",
+      "Dermal contact",
+      "Dust ingestion",
+      "Inhalation"
+    ],
+    "exposure_drivers": [
+      "Polymer/additive identity",
+      "Heat",
+      "UV exposure",
+      "Age and wear",
+      "Contact with food or skin"
+    ],
+    "practical_questions": [
+      "What polymer is it?",
+      "Which additives are used?",
+      "Is it heated or heavily worn?",
+      "Is there direct food or skin contact?"
+    ],
+    "source_label": "NIEHS — Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
+  },
+  {
+    "id": "cosmetics",
+    "title": "Cosmetics & personal care",
+    "subtitle": "Ingredients, frequency and dermal use",
+    "source": "Fragrances, lotions, cosmetics and personal-care formulations",
+    "chemical": "Selected phthalates, parabens and other ingredients depending on formulation",
+    "route": "Primarily dermal; inhalation or incidental ingestion can also occur",
+    "system": "Reproductive and other endocrine signaling depending on compound",
+    "evidenceLabel": "Ingredient-specific",
+    "summary": "Personal-care exposure is driven by the ingredient list, formulation, amount used, skin area and frequency. Some ingredients have endocrine-activity research, but products should not be treated as toxicologically interchangeable.",
+    "limitation": "The presence of an ingredient with endocrine activity in a laboratory system does not by itself establish adverse effects from typical product use.",
+    "icon": "CARE",
+    "chemical_classes": [
+      "Phthalates",
+      "Parabens",
+      "Selected fragrance-related compounds"
+    ],
+    "example_contexts": [
+      "Fragrance",
+      "Nail products",
+      "Lotions",
+      "Hair products",
+      "Cosmetics"
+    ],
+    "exposure_routes": [
+      "Dermal absorption",
+      "Inhalation",
+      "Incidental ingestion"
+    ],
+    "exposure_drivers": [
+      "Ingredient concentration",
+      "Frequency of use",
+      "Skin area",
+      "Leave-on vs rinse-off use",
+      "Multiple-product use"
+    ],
+    "practical_questions": [
+      "Which ingredient is the concern?",
+      "Is it listed or inferred?",
+      "How often is the product used?",
+      "What human exposure data exist for that ingredient?"
+    ],
+    "source_label": "FDA — Cosmetics",
+    "source_url": "https://www.fda.gov/cosmetics"
+  },
+  {
+    "id": "household",
+    "title": "Household environment",
+    "subtitle": "Dust, air, furnishings and building materials",
+    "source": "Indoor dust, furniture, electronics, flooring and older building materials",
+    "chemical": "Flame retardants, phthalates, PCBs and other semi-volatile chemicals depending on setting",
+    "route": "Dust ingestion, inhalation and dermal contact",
+    "system": "Thyroid, reproductive and developmental pathways depending on compound",
+    "evidenceLabel": "Environment-specific",
+    "summary": "Many semi-volatile chemicals can move from products into indoor air and dust. Household exposure therefore links product composition, ventilation, cleaning, age of materials and hand-to-mouth behavior.",
+    "limitation": "Indoor dust contains complex mixtures. Measuring one chemical does not establish that it caused a particular health outcome.",
+    "icon": "HOME",
+    "chemical_classes": [
+      "Flame retardants",
+      "Phthalates",
+      "PCBs in some older buildings"
+    ],
+    "example_contexts": [
+      "Furniture foam",
+      "Electronics",
+      "Vinyl flooring",
+      "Older caulk and building materials",
+      "Household dust"
+    ],
+    "exposure_routes": [
+      "Dust ingestion",
+      "Inhalation",
+      "Dermal contact"
+    ],
+    "exposure_drivers": [
+      "Product emissions",
+      "Ventilation",
+      "Dust loading",
+      "Material age",
+      "Cleaning and hand-to-mouth behavior"
+    ],
+    "practical_questions": [
+      "What material is the likely source?",
+      "Is the building older?",
+      "Was dust or air actually measured?",
+      "Which compound or mixture was detected?"
+    ],
+    "source_label": "NIEHS — Indoor Environment and Endocrine Disruptors",
+    "source_url": "https://www.niehs.nih.gov/health/topics/agents/endocrine"
   }
 ]
