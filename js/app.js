@@ -5,11 +5,30 @@ const state = {
   hormones: [],
   receptors: [],
   feedbackSystems: [],
-  compounds: []
+  compounds: [],
+  pathways: [],
+  activePathway: null
 };
 
 const els = {
   sourcePicker: document.querySelector("#sourcePicker"),
+  pathwayScenarioPicker: document.querySelector("#pathwayScenarioPicker"),
+  bioPathwayTitle: document.querySelector("#bioPathwayTitle"),
+  bioPathwayEvidenceLabel: document.querySelector("#bioPathwayEvidenceLabel"),
+  bioPathwayGrade: document.querySelector("#bioPathwayGrade"),
+  bioProduct: document.querySelector("#bioProduct"),
+  bioChemical: document.querySelector("#bioChemical"),
+  bioChemicalClass: document.querySelector("#bioChemicalClass"),
+  bioExposure: document.querySelector("#bioExposure"),
+  bioTarget: document.querySelector("#bioTarget"),
+  bioTargetType: document.querySelector("#bioTargetType"),
+  bioSystem: document.querySelector("#bioSystem"),
+  bioMechanism: document.querySelector("#bioMechanism"),
+  bioCaveat: document.querySelector("#bioCaveat"),
+  bioOpenExposure: document.querySelector("#bioOpenExposure"),
+  bioOpenChemical: document.querySelector("#bioOpenChemical"),
+  bioOpenSystem: document.querySelector("#bioOpenSystem"),
+  bioSource: document.querySelector("#bioSource"),
   exposureAtlasGrid: document.querySelector("#exposureAtlasGrid"),
   exposureName: document.querySelector("#exposureName"),
   exposureSubtitle: document.querySelector("#exposureSubtitle"),
@@ -88,6 +107,99 @@ async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`Unable to load ${path}`);
   return response.json();
+}
+
+
+function findChemicalClassForPathway(pathway) {
+  return state.chemicals.find(item =>
+    item.name.toLowerCase() === pathway.chemical_class.toLowerCase() ||
+    item.full_name.toLowerCase() === pathway.chemical_class.toLowerCase()
+  );
+}
+
+function renderPathwayScenarios() {
+  els.pathwayScenarioPicker.innerHTML = "";
+  state.pathways.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "pathway-scenario-button";
+    button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+    button.innerHTML = `<strong>${item.title}</strong><small>${item.chemical} · ${item.endocrine_system}</small>`;
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".pathway-scenario-button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      renderBiologicalPathway(item);
+    });
+    els.pathwayScenarioPicker.appendChild(button);
+  });
+  if (state.pathways[0]) renderBiologicalPathway(state.pathways[0]);
+}
+
+function renderBiologicalPathway(item) {
+  state.activePathway = item;
+  els.bioPathwayTitle.textContent = item.title;
+  els.bioPathwayEvidenceLabel.textContent = item.evidence_label;
+  els.bioPathwayGrade.textContent = item.evidence_grade;
+  els.bioProduct.textContent = item.product;
+  els.bioChemical.textContent = item.chemical;
+  els.bioChemicalClass.textContent = item.chemical_class;
+  els.bioExposure.textContent = item.exposure;
+  els.bioTarget.textContent = item.molecular_target;
+  els.bioTargetType.textContent = item.target_type;
+  els.bioSystem.textContent = item.endocrine_system;
+  els.bioMechanism.textContent = item.mechanism;
+  els.bioCaveat.textContent = item.caveat;
+  els.bioSource.textContent = `${item.source_label} ↗`;
+  els.bioSource.href = item.source_url;
+
+  els.bioOpenExposure.disabled = !state.exposures.some(x => x.id === item.linked_exposure_id);
+  els.bioOpenChemical.disabled = !findChemicalClassForPathway(item);
+  els.bioOpenSystem.disabled = !state.endocrineSystems.some(x => x.id === item.linked_system_id);
+}
+
+function selectButtonByDataset(selector, attr, value) {
+  const buttons = [...document.querySelectorAll(selector)];
+  const target = buttons.find(button => button.dataset[attr] === value);
+  if (!target) return;
+  buttons.forEach(button => button.setAttribute("aria-pressed", "false"));
+  target.setAttribute("aria-pressed", "true");
+  target.scrollIntoView({block: "nearest", inline: "nearest"});
+  target.click();
+}
+
+function setupPathwayDeepLinks() {
+  els.bioOpenExposure.addEventListener("click", () => {
+    const item = state.activePathway;
+    if (!item) return;
+    const exposure = state.exposures.find(x => x.id === item.linked_exposure_id);
+    if (!exposure) return;
+    renderExposureProfile(exposure);
+    const buttons = [...document.querySelectorAll(".exposure-atlas-button")];
+    buttons.forEach((button, index) => button.setAttribute("aria-pressed", state.exposures[index]?.id === exposure.id ? "true" : "false"));
+    document.querySelector("#exposure-atlas")?.scrollIntoView({behavior: "smooth", block: "start"});
+  });
+
+  els.bioOpenChemical.addEventListener("click", () => {
+    const item = state.activePathway;
+    if (!item) return;
+    const chemical = findChemicalClassForPathway(item);
+    if (!chemical) return;
+    renderChemicalProfile(chemical);
+    const buttons = [...document.querySelectorAll(".chemical-class-button")];
+    buttons.forEach((button, index) => button.setAttribute("aria-pressed", state.chemicals[index]?.id === chemical.id ? "true" : "false"));
+    document.querySelector("#chemicals")?.scrollIntoView({behavior: "smooth", block: "start"});
+  });
+
+  els.bioOpenSystem.addEventListener("click", () => {
+    const item = state.activePathway;
+    if (!item) return;
+    const system = state.endocrineSystems.find(x => x.id === item.linked_system_id);
+    if (!system) return;
+    renderAxis(system);
+    const buttons = [...document.querySelectorAll(".axis-button")];
+    buttons.forEach((button, index) => button.setAttribute("aria-pressed", state.endocrineSystems[index]?.id === system.id ? "true" : "false"));
+    document.querySelector("#endocrine")?.scrollIntoView({behavior: "smooth", block: "start"});
+  });
 }
 
 function renderExposureButtons() {
@@ -304,14 +416,15 @@ function renderFeedback(item) {
 
 async function init() {
   try {
-    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds] = await Promise.all([
+    const [exposures, chemicals, endocrineSystems, hormones, receptors, feedbackSystems, compounds, pathways] = await Promise.all([
       loadJson("data/exposures.json"),
       loadJson("data/chemicals.json"),
       loadJson("data/endocrine-systems.json"),
       loadJson("data/hormones.json"),
       loadJson("data/receptors.json"),
       loadJson("data/feedback-systems.json"),
-      loadJson("data/compounds.json")
+      loadJson("data/compounds.json"),
+      loadJson("data/pathways.json")
     ]);
 
     state.exposures = exposures;
@@ -321,7 +434,10 @@ async function init() {
     state.receptors = receptors;
     state.feedbackSystems = feedbackSystems;
     state.compounds = compounds;
+    state.pathways = pathways;
 
+    renderPathwayScenarios();
+    setupPathwayDeepLinks();
     renderExposureButtons();
     renderExposureAtlas();
     renderChemicals();
