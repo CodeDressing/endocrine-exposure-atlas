@@ -2120,3 +2120,139 @@ select { font-size: 16px; max-width: 100%; }
     padding: 16px;
   }
 }
+
+
+/* Step 10 — Finn Keane project layer */
+.project-section {
+  background: linear-gradient(180deg, #f3f5f1 0%, #fbfcfa 100%);
+}
+
+.project-intro {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.project-pillars {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.project-pillars article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.project-pillars span {
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 900;
+}
+
+.project-pillars h3 {
+  margin: 12px 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.project-pillars p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+}
+
+.project-audience {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.project-audience > div,
+.project-status {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+}
+
+.project-audience h3,
+.project-status h3 {
+  margin: 5px 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.project-audience p,
+.project-status p {
+  color: var(--muted);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.project-standard-list {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.project-standard-list li {
+  margin-bottom: 7px;
+}
+
+.project-status {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: .55fr 1.45fr;
+  gap: 24px;
+  align-items: start;
+  background: var(--warm);
+}
+
+.project-status p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .project-intro,
+  .project-audience,
+  .project-status {
+    grid-template-columns: 1fr;
+  }
+  .project-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .project-intro {
+    gap: 20px;
+  }
+  .project-pillars {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+  .project-pillars article,
+  .project-audience > div,
+  .project-status {
+    padding: 16px;
+  }
+  .project-links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .project-links .button {
+    width: 100%;
+  }
+}
