@@ -1,0 +1,39 @@
+{
+  "version": "0.1",
+  "principle": "Evidence strength is claim-specific, not chemical-class-wide.",
+  "classes": [
+    {
+      "grade": "A",
+      "label": "Established / high confidence",
+      "definition": "Converging high-quality evidence or an authoritative assessment supporting the specific claim."
+    },
+    {
+      "grade": "B",
+      "label": "Moderate evidence",
+      "definition": "Meaningful evidence exists, but important uncertainty, limitations, or replication gaps remain."
+    },
+    {
+      "grade": "C",
+      "label": "Emerging / limited evidence",
+      "definition": "Early human, animal, or mechanistic evidence that does not justify a strong causal conclusion."
+    },
+    {
+      "grade": "?",
+      "label": "Uncertain / unresolved",
+      "definition": "Evidence is insufficient, inconsistent, compound-specific, or too context-dependent for a stable conclusion."
+    }
+  ],
+  "required_fields_for_future_claims": [
+    "claim",
+    "chemical_or_compound",
+    "evidence_class",
+    "study_type",
+    "species_or_population",
+    "year",
+    "citation_id",
+    "source_url",
+    "limitations",
+    "replication_status",
+    "reviewer_status"
+  ]
+}
