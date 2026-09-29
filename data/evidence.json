@@ -1,21 +1,21 @@
 {
-  "version": "0.1",
-  "principle": "Evidence strength is claim-specific, not chemical-class-wide.",
+  "version": "0.2",
+  "principle": "Evidence strength is claim-specific, not chemical-class-wide. Human, animal, mechanistic, and authoritative synthesis evidence are displayed separately rather than collapsed into one score.",
   "classes": [
     {
       "grade": "A",
       "label": "Established / high confidence",
-      "definition": "Converging high-quality evidence or an authoritative assessment supporting the specific claim."
+      "definition": "Converging high-quality evidence or an authoritative assessment strongly supporting the specific claim."
     },
     {
       "grade": "B",
       "label": "Moderate evidence",
-      "definition": "Meaningful evidence exists, but important uncertainty, limitations, or replication gaps remain."
+      "definition": "Meaningful evidence supports the claim, but important uncertainty, limitations, or replication gaps remain."
     },
     {
       "grade": "C",
       "label": "Emerging / limited evidence",
-      "definition": "Early human, animal, or mechanistic evidence that does not justify a strong causal conclusion."
+      "definition": "Early or incomplete human, animal, or mechanistic evidence that does not justify a strong causal conclusion."
     },
     {
       "grade": "?",
@@ -23,13 +23,35 @@
       "definition": "Evidence is insufficient, inconsistent, compound-specific, or too context-dependent for a stable conclusion."
     }
   ],
-  "required_fields_for_future_claims": [
+  "evidence_types": [
+    {
+      "id": "human",
+      "label": "Human evidence",
+      "definition": "Epidemiology, biomonitoring, clinical or occupational evidence in people. Association does not by itself establish causality."
+    },
+    {
+      "id": "animal",
+      "label": "Animal evidence",
+      "definition": "In vivo studies that can test controlled exposure and biological outcomes, with uncertainty when extrapolating to humans."
+    },
+    {
+      "id": "mechanistic",
+      "label": "Mechanistic evidence",
+      "definition": "Receptor, cellular, molecular, biochemical or other evidence explaining how a chemical may interact with endocrine biology."
+    },
+    {
+      "id": "synthesis",
+      "label": "Authoritative synthesis",
+      "definition": "Evidence integration by agencies, expert reviews, or major scientific assessments."
+    }
+  ],
+  "required_fields_for_claims": [
     "claim",
     "chemical_or_compound",
+    "evidence_type",
     "evidence_class",
     "study_type",
     "species_or_population",
-    "year",
     "citation_id",
     "source_url",
     "limitations",
